@@ -86,6 +86,62 @@ main {
 }
 
 
+
+/* ========== PLACE ORDER =========== */
+.placeOrderContainer{
+    background: gray;
+    border: #e5973b 2px solid;
+    border-radius: 25px;
+    padding: 10px;
+    opacity: 0.9;
+    width: 90%;
+    margin: auto
+}
+.inputLabel{
+    color: #e5973b !important;
+    font-size: 20px !important;
+    font-family: 'Righteous', cursive;
+}
+.uploadImgText{
+    margin: 0px;
+    color: white;
+    font-family: 'Merienda', cursive;
+}
+#uploadImgBtn{
+    background: #e5973b;
+    border: white 1px solid;
+}
+#uploadImgBtn:hover{
+    background: white;
+    color: #e5973b;
+    border: #e5973b 1px solid;
+}
+.input-field.col label{
+    text-align: center !important;
+}
+input{
+    text-align: center !important;
+    color: white
+}
+.select-dropdown{
+    text-align: center
+}
+.orderInputLabels{
+    font-size: 20px !important;
+    color: #e5973b !important;
+}
+#submitOrderBtn{
+    background: green;
+    border: #e5973b 1px solid;
+}
+#submitOrderBtn:hover{
+    background: #e5973b;
+    color: white;
+    border: white 1px solid;
+}
+
+
+
 /* ========== CONTACT BOX =========== */
 #contactBox{
     background: #2b292a;
@@ -129,5 +185,8 @@ main {
     }
     #contactBox{
         width: 40%
+    }
+    .placeOrderContainer{
+        width: 80%
     }
 }
