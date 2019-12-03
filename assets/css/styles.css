@@ -1,10 +1,6 @@
 /* ===== BACKGROUND AND FOOTER SETTINGS ===== */
 body {
-    /* background: url(../images/static/prism.png); */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #171f22;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -13,33 +9,25 @@ main {
     flex:1 0 auto
 }
 
-/* ============ NAVBAR ============= */
-/* .brand-logo{
-    font-family: 'Playball', cursive;
-    font-size: 25px !important;
+#mainContainer{
+    width: 100%;
+    margin: auto
 }
-.brand-logo:hover{
-    color: gold !important
-} */
-.nav-wrapper{
-    box-shadow: none!important;
+
+
+
+/* ============ LOGO =============== */
+.Logo{
+    font-family: 'Righteous', cursive;
+    color: #2b292a;
+    -webkit-text-stroke: 2px #e5973b;
+    margin: auto;
 }
-.navlink{
-    font-family: 'Alegreya Sans', sans-serif;
+.Logo:hover{
+    color: #e5973b !important;
+    -webkit-text-stroke: 3px #2b292a;
 }
-#slide-out{
-    background: url(../images/static/prism.png)
-}
-.user-view{
-    height: 150px
-}
-.sidenavLink{
-    font-size: 20px !important;
-    text-align: center;
-}
-.sidenavItem{
-    margin: 20px auto
-}
+
 
 
 /* ========= PARALLAX IMGS ========== */
@@ -50,17 +38,77 @@ main {
     max-width: 350%;
 }
 
-/* ============ FOOTER ============== */
-#footer{
-    position:fixed;bottom:0;left:0;width:100%;
+
+
+/* ======== SHOP COLLAPSIBLE ======== */
+#shopText{
+    margin: -40px auto 10px auto;
+    text-align: center;
+    font-family: 'Playball', sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px #e5973b;
+    font-size: 80px;
 }
-.footText{
-    font-family: 'Alegreya Sans', sans-serif;
+#shopText:hover{
+    color: #e5973b;
+    font-family: 'Playball', sans-serif;
+    -webkit-text-stroke: 2px white;
+}
+.collapseHeadText{
+    margin: auto;
+    font-size: 25px;
+    font-family: 'Merienda', cursive;
+}
+.collapsible-header{
+    border-radius: 20px;
+    background: #2b292a !important;
+    color: #e5973b;
+    border: #e5973b 1px solid;
+}
+.collapsible-header:hover{
+    border-radius: 20px;
+    background: #e5973b !important;
+    color: white;
+    border: white 1px solid;
+}
+.itemName{
+    color: #e5973b;
+    font-family: 'Merienda', cursive;
+    text-decoration: underline 1px solid !important
+}
+.itemDescription{
+    color: #e5973b;
+    font-family: 'Vibes', cursive;
+}
+.placeOrderText{
+    color: #e5973b;
+    font-family: 'Merienda', cursive;
+}
+
+
+/* ========== CONTACT BOX =========== */
+#contactBox{
+    background: #2b292a;
+    color: #d48d37;
+    border: #d48d37 2px solid;
+    opacity: 0.9;
+    margin: auto;
+    width: 75%;
+    border-radius: 25px;
+    font-family: 'Merienda', cursive;
+    padding: 10px
+}
+.contactBoxIco{
+    font-size: 50px !important;
+    color: #c7d3dd !important
+}
+.contactBoxIco:hover{
+    color: #d48d37 !important
 }
 
 
 
-/* ========= MEDIA QUERIES ========== */
+/* ============= MEDIA QUERIES ============== */
 
 /* ====== smaller than 570px (iPhone5) ====== */
 @media only screen and (max-width: 570px) {
@@ -75,5 +123,11 @@ main {
     }
     .parallaxImg{
         max-width: 150%;
+    }
+    #mainContainer{
+        width: 90%;
+    }
+    #contactBox{
+        width: 40%
     }
 }
