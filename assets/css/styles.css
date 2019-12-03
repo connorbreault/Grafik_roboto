@@ -103,7 +103,6 @@ main {
     font-family: 'Righteous', cursive;
 }
 .uploadImgText{
-    margin: 0px;
     color: white;
     font-family: 'Merienda', cursive;
 }
@@ -138,6 +137,16 @@ input{
     background: #e5973b;
     color: white;
     border: white 1px solid;
+}
+#separationHR{
+    border-top: 1px solid #e5973b;
+}
+.row{
+    margin-bottom: 5px
+}
+#uploadDirections{
+    color: white;
+    font-family: 'Alegreya Sans', cursive;
 }
 
 

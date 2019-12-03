@@ -89,17 +89,34 @@
                                                 <option value="1">Option 1</option>
                                                 <option value="2">Option 2</option>
                                                 <option value="3">Option 3</option>
+                                                <option value="other">Other (Price inquiry w/ owner)</option>
                                             </select>
                                             <label class="inputLabel">Select Size</label>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <h4 class="col s7 l8 offset-l1 center-align uploadImgText valign-wrapper">Upload
-                                            your image</h4>
-                                        <a class="col s5 l2 waves-effect waves-light btn valign-wrapper"
-                                            id="uploadImgBtn">Browse</a>
+                                        <div class="input-field col s12">
+                                            <input id="quantity" type="text" class="validate">
+                                            <label for="quantity" class="orderInputLabels">Quantity (# of
+                                                decals)</label>
+                                        </div>
                                     </div>
-                                    <hr>
+                                    <div class="file-field input-field">
+                                        <h4 class="uploadImgText center-align">Upload
+                                            your design</h4>
+                                        <h6 class="center-align" id="uploadDirections">Design
+                                            specifications will
+                                            go here</h6>
+                                        <hr width="40%">
+                                        <div class="btn" id="uploadImgBtn">
+                                            <span>File</span>
+                                            <input type="file">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                    <hr width="80%" id="separationHR">
                                     <div class="row">
                                         <form class="col s12">
                                             <div class="row">
