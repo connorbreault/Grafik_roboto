@@ -21,6 +21,9 @@ main {
 .brand-logo:hover{
     color: gold !important
 } */
+.nav-wrapper{
+    box-shadow: none!important;
+}
 .navlink{
     font-family: 'Alegreya Sans', sans-serif;
 }
@@ -38,10 +41,39 @@ main {
     margin: 20px auto
 }
 
+
+/* ========= PARALLAX IMGS ========== */
+.parallax-container{
+    height: 600px !important
+}
+.parallaxImg{
+    max-width: 350%;
+}
+
 /* ============ FOOTER ============== */
 #footer{
     position:fixed;bottom:0;left:0;width:100%;
 }
 .footText{
     font-family: 'Alegreya Sans', sans-serif;
+}
+
+
+
+/* ========= MEDIA QUERIES ========== */
+
+/* ====== smaller than 570px (iPhone5) ====== */
+@media only screen and (max-width: 570px) {
+    .parallax-container{
+        height: 500px;
+    }
+}
+/* ========== larger than 800px ============= */
+@media only screen and (min-width: 800px) {
+    .parallax-container{
+        height: 650px;
+    }
+    .parallaxImg{
+        max-width: 150%;
+    }
 }

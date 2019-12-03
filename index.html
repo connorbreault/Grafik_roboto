@@ -27,50 +27,98 @@
 <body>
     <div class="pageContainer">
         <header>
-            <!--Navbar-->
-            <nav class="nav-wrapper grey darken-2" id="mainNavbar">
-                <div class="container">
-                    <a href="#" class="brand-logo cyan-text">Grafik Roboto</a>
-                    <a href="#" class="sidenav-trigger" data-target="slide-out">
-                        <i class="material-icons">menu</i>
-                    </a>
-                    <ul id="navbar-links" class="right hide-on-med-and-down">
-                        <li><a href="./contact.html" class="contactLink lnk navlink">Contact Me</a></li>
-                        <li><a href="./reportIssue.html" class="profileLink lnk navlink">Report Issue</a></li>
+            <div class="parallax-container">
+                <!--Navbar-->
+                <div class="navbar-fixed">
+                    <nav class="nav-wrapper transparent" id="mainNavbar">
+                        <div class="container">
+                            <a href="#" class="brand-logo center">Grafik Roboto</a>
+                            <a href="#" class="sidenav-trigger" data-target="slide-out">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <ul id="navbar-links" class="right hide-on-med-and-down">
+                                <li><a href="./contact.html" class="contactLink lnk navlink">Contact Me</a></li>
+                                <li><a href="./reportIssue.html" class="profileLink lnk navlink">Report Issue</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <!--Navbar Phone Menu-->
+                <div>
+                    <ul id="slide-out" class="sidenav">
+                        <li>
+                            <div class="user-view">
+                                <div class="background">
+                                    <img class="sidenavImg" src="./assets/images/static/sidenav.jpg">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="sidenavItem"><a class="waves-effect sidenavLink cyan-text" href="./contact.html">
+                                <i class="material-icons sidenavIco cyan-text">mail_outline</i>
+                                Contact Me</a>
+                        </li>
+                        <li class="sidenavItem"><a class="waves-effect sidenavLink cyan-text" href="./reportIssue.html">
+                                <i class="material-icons sidenavIco cyan-text">new_releases</i>
+                                Report Issue</a>
+                        </li>
                     </ul>
                 </div>
-            </nav>
-
-            <!--Navbar Phone Menu-->
-            <div>
-                <ul id="slide-out" class="sidenav">
-                    <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img class="sidenavImg" src="./assets/images/static/sidenav.jpg">
-                            </div>
-                        </div>
-                    </li>
-                    <li class="sidenavItem"><a class="waves-effect sidenavLink cyan-text" href="./contact.html">
-                            <i class="material-icons sidenavIco cyan-text">mail_outline</i>
-                            Contact Me</a>
-                    </li>
-                    <li class="sidenavItem"><a class="waves-effect sidenavLink cyan-text" href="./reportIssue.html">
-                            <i class="material-icons sidenavIco cyan-text">new_releases</i>
-                            Report Issue</a>
-                    </li>
-                </ul>
+                <div class="parallax"><img class="parallaxImg" src="./assets/images/static/top_parallax.jpg"></div>
             </div>
         </header>
 
         <main>
-
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                    <div class="collapsible-body">
+                        <h1>hi</h1>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                    <div class="collapsible-body"><span>
+                            <div class="carousel">
+                                <a class="carousel-item" href="#one!"><img src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#two!"><img src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#three!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#four!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#five!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                            </div>
+                        </span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                    <div class="collapsible-body"><span>
+                            <div class="carousel">
+                                <a class="carousel-item" href="#one!"><img src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#two!"><img src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#three!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#four!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                                <a class="carousel-item" href="#five!"><img
+                                        src="./assets/images/static/sidenav.jpg"></a>
+                            </div>
+                        </span></div>
+                </li>
+            </ul>
+            <div class="carousel center">
+                <a class="carousel-item" href="#one!"><img src="./assets/images/static/sidenav.jpg"></a>
+                <a class="carousel-item" href="#two!"><img src="./assets/images/static/top_parallax.jpg"></a>
+                <a class="carousel-item" href="#three!"><img src="./assets/images/static/sidenav.jpg"></a>
+                <a class="carousel-item" href="#four!"><img src="./assets/images/static/sidenav.jpg"></a>
+                <a class="carousel-item" href="#five!"><img src="./assets/images/static/sidenav.jpg"></a>
+            </div>
         </main>
 
 
         <!--Footer-->
-        <footer id="footer" class="page-footer transparent"
-            style="position:absolute;bottom:0;width:100%; height:2.5rem">
+        <footer id="footer" class="page-footer transparent" style="height:2.5rem">
             <div class="footer grey darken-3">
                 <div class="container center footText cyan-text" id="copyright">
                     © 2019 Copyright
