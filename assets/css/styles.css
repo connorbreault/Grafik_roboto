@@ -43,7 +43,6 @@ body {
 }
 #shopText:hover{
     color: #e5973b;
-    font-family: 'Playball', sans-serif;
     -webkit-text-stroke: 2px white;
 }
 .collapseHeadText{
@@ -65,7 +64,6 @@ body {
 .itemName{
     color: #e5973b;
     font-family: 'Merienda', cursive;
-    text-decoration: underline 1px solid !important
 }
 .itemDescription{
     color: #e5973b;
