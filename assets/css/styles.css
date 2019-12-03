@@ -1,16 +1,8 @@
 /* ===== BACKGROUND AND FOOTER SETTINGS ===== */
 body {
     background: #171f22;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
 }
-main {
-    flex:1 0 auto
-}
-
 #mainContainer{
-    width: 100%;
     margin: auto
 }
 
@@ -66,7 +58,6 @@ main {
     border: #e5973b 1px solid;
 }
 .collapsible-header:hover{
-    border-radius: 20px;
     background: #e5973b !important;
     color: white;
     border: white 1px solid;
@@ -94,7 +85,6 @@ main {
     border-radius: 25px;
     padding: 10px;
     opacity: 0.9;
-    width: 90%;
     margin: auto
 }
 .inputLabel{
@@ -147,6 +137,13 @@ input{
 #uploadDirections{
     color: white;
     font-family: 'Alegreya Sans', cursive;
+}
+.placeOrderCollapsible{
+    color: #2b292a;
+}
+#orangeCollapsible{
+    background: #e5973b !important;
+    border: #2b292a 1px solid;
 }
 
 

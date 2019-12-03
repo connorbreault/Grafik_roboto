@@ -1,10 +1,12 @@
 // === MATERIALIZE FUNCTIONS === //
 $(document).ready(function () {
     M.AutoInit();
-    // $(".sidenav").sidenav()
-    // $(".modal").modal()
-    // $('.parallax').parallax();
-    // $('.collapsible').collapsible();
-    // $('.materialboxed').materialbox();
-    // $('.carousel').carousel();
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+        accordion: false
+    });
 });
+
+
+
+// === SUBMIT ORDERS === //
