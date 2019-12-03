@@ -1,0 +1,47 @@
+/* ===== BACKGROUND AND FOOTER SETTINGS ===== */
+body {
+    /* background: url(../images/static/prism.png); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex:1 0 auto
+}
+
+/* ============ NAVBAR ============= */
+/* .brand-logo{
+    font-family: 'Playball', cursive;
+    font-size: 25px !important;
+}
+.brand-logo:hover{
+    color: gold !important
+} */
+.navlink{
+    font-family: 'Alegreya Sans', sans-serif;
+}
+#slide-out{
+    background: url(../images/static/prism.png)
+}
+.user-view{
+    height: 150px
+}
+.sidenavLink{
+    font-size: 20px !important;
+    text-align: center;
+}
+.sidenavItem{
+    margin: 20px auto
+}
+
+/* ============ FOOTER ============== */
+#footer{
+    position:fixed;bottom:0;left:0;width:100%;
+}
+.footText{
+    font-family: 'Alegreya Sans', sans-serif;
+}
