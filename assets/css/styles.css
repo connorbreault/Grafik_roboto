@@ -24,7 +24,7 @@ body {
 
 /* ========= PARALLAX IMGS ========== */
 .parallax-container{
-    height: 600px !important
+    height: 550px !important
 }
 .parallaxImg{
     max-width: 350%;
