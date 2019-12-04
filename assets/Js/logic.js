@@ -6,7 +6,9 @@ $(document).ready(function () {
         accordion: false
     });
 });
-
+function js_Load() {
+    document.body.style.visibility = 'visible'
+}
 
 
 // === SUBMIT ORDERS === //
