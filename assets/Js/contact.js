@@ -27,10 +27,14 @@ $("#submitMessageBtn").on("click", function () {
             .then(function (response) {
                 console.log('Sucessful message send!')
                 $("#loadingDiv").addClass("hidden")
+                $(".returnHomeBox").addClass("hidden")
+                $("#ourContact").addClass("hidden")
                 $("#thanksDiv").removeClass("hidden")
             }, function (error) {
                 console.log('FAILED...', error)
                 $("#loadingDiv").addClass("hidden")
+                $(".returnHomeBox").addClass("hidden")
+                $("#ourContact").addClass("hidden")
                 $("#errorDiv").removeClass("hidden")
             });
     }
