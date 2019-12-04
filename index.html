@@ -29,7 +29,7 @@
 <body>
     <div class="pageContainer">
         <div class="parallax-container valign-wrapper center-align">
-            <h1 class="Logo">GRAFIK kjsbdfhaROBOTO</h1>
+            <h1 class="Logo">GRAFIK ROBOTO</h1>
             <div class="parallax"><img class="parallaxImg" src="./assets/images/static/top_parallax.jpg"></div>
         </div>
 
@@ -44,7 +44,7 @@
                         <span>
                             <h4 class="placeOrderText center-align">Items</h4>
                             <hr>
-                            <div class="row">
+                            <div class="row productRow">
                                 <div class="col s12 l4">
                                     <img src="./assets/images/static/loadingLife.jpg"
                                         class="responsive-img materialboxed" alt="">
@@ -78,7 +78,7 @@
                         <span>
                             <h4 class="placeOrderText center-align">Items</h4>
                             <hr>
-                            <div class="row">
+                            <div class="row productRow">
                                 <div class="col s12 l4">
                                     <img src="./assets/images/static/loadingLife.jpg"
                                         class="responsive-img materialboxed" alt="">
@@ -111,15 +111,15 @@
                     <div class="collapsible-body"><span>
                             <h4 class="placeOrderText center-align">Items</h4>
                             <hr>
-                            <div class="row">
-                                <div class="col s12 l4">
+                            <div class="row productRow">
+                                <div class="col s12 l4 offset-l1">
                                     <img src="./assets/images/static/loadingLife.jpg"
                                         class="responsive-img materialboxed" alt="">
                                     <h4 class="center-align itemName">House 1</h4>
                                     <h4 class="center-align itemDescription">Description</h4>
                                     <h6 class="center-align itemName">$4.20 per sticker</h6>
                                 </div>
-                                <div class="col s12 l4">
+                                <div class="col s12 l4 offset-l2">
                                     <img src="./assets/images/static/loadingLife.jpg"
                                         class="responsive-img materialboxed" alt="">
                                     <h4 class="center-align itemName">House 2</h4>
@@ -142,7 +142,7 @@
                                     <!-- === PRODUCT === -->
                                     <div class="row">
                                         <div class="input-field col s12 l8 offset-l2">
-                                            <select>
+                                            <select id="productSelect">
                                                 <option value="" disabled selected>Choose your product</option>
                                                 <option value="Standard">Standard</option>
                                                 <option value="Holographic">Holographic</option>
@@ -157,7 +157,7 @@
 
                                     <!-- === COLOR === -->
                                     <div class="input-field col s12 l6">
-                                        <select>
+                                        <select id="colorSelect">
                                             <option value="" disabled selected>Choose your color</option>
                                             <option value="Red">Red</option>
                                             <option value="Blue">Blue</option>
@@ -170,7 +170,7 @@
 
                                     <!-- === SIZE === -->
                                     <div class="input-field col s12 l6">
-                                        <select>
+                                        <select id="sizeSelect">
                                             <option value="" disabled selected>Choose your size</option>
                                             <option value="2x7">2in x 7in</option>
                                             <option value="3x8">3in x 8in</option>
@@ -184,7 +184,7 @@
                                 <!-- === QUANTITY === -->
                                 <div class="row">
                                     <div class="input-field col s12 l8 offset-l2">
-                                        <select>
+                                        <select id="quantitySelect">
                                             <option value="" disabled selected>Choose your quantity</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -207,7 +207,7 @@
                                     <hr width="40%">
                                     <div class="btn" id="uploadImgBtn">
                                         <span>File</span>
-                                        <input type="file">
+                                        <input id="fileInput" type="file">
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text">
@@ -278,8 +278,10 @@
                 <h3>For all inqueries and issues:</h3>
                 <div class="row">
                     <div class="col s12 l12">
-                        <h5>Contact Us: </h5><i class="material-icons contactBoxIco">email</i>
-                        <h5>Report an issue: </h5><i class="material-icons contactBoxIco">report_problem</i>
+                        <h5>Contact Us: </h5><a href="./contact.html"><i
+                                class="material-icons contactBoxIco">email</i></a>
+                        <h5>Report an issue: </h5><a href="./reportIssue.html"><i
+                                class="material-icons contactBoxIco">report_problem</i></a>
                     </div>
                 </div>
             </div>
@@ -287,6 +289,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/Js/logic.js"></script>
 </body>
