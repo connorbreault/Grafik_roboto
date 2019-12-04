@@ -3,6 +3,9 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
     background-attachment: fixed;
     display: flex;
     min-height: 100vh;
@@ -168,7 +171,7 @@ letter-spacing: 1px
     border-radius: 50%;
     margin: auto 10px
 }
-.fa-facebook {
+.fa-instagram {
     background: #3B5998;
     color: white;
 }
