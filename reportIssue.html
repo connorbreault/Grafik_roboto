@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!--Link to our styles.css-->
-    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/contact.css" type="text/css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -20,15 +20,77 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <title>GrafikRoboto Report</title>
+    <title>GrafikRoboto Contact</title>
 
     <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
-<body>
-    <div class="pageContainer">
+<body style="visibility:hidden;" onload="js_Load()">
+    <div class="bg">
+        <div class="pageContainer">
+            <header>
+                <div class="logoDiv valign-wrapper">
+                    <h1 class="Logo center-align">GRAFIK ROBOTO</h1>
+                </div>
+            </header>
+            <main>
+                <div id="contactBox">
+                    <h2 id="contactHeader">Send us a message</h2>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m6 l6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Full Name</label>
+                                </div>
+                                <div class="input-field col s12 m6 l6">
+                                    <i class="material-icons prefix">phone</i>
+                                    <input id="icon_telephone" type="tel" class="validate">
+                                    <label for="icon_telephone">Phone Number</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="icon_email" type="email" class="validate">
+                                    <label for="icon_email">Email</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s10 offset-s1">
+                                    <textarea id="messageBox" class="materialize-textarea"></textarea>
+                                    <label for="messageBox">Leave a message</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <a class="col s4 offset-s4 waves-effect waves-light btn" id="submitMessageBtn">
+                            <i class="material-icons left">add_circle_outline</i>Send</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Or</h3>
+                    <br>
+                    <h4>Contact me at:</h4>
+                    <hr width="50%">
 
+                </div>
+            </main>
+            <!--Footer-->
+            <footer id="footer" class="page-footer transparent"
+                style="position:absolute;bottom:0;width:100%; height:2.5rem">
+                <div class="footer grey darken-3">
+                    <div class="container center footText cyan-text" id="copyright">
+                        © 2019 Copyright
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

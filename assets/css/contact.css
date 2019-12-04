@@ -1,0 +1,110 @@
+.bg {
+    /* The image used */
+    background: url("../images/static/contact.jpg");
+    /* Full height */
+    /* height: 100%; */
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0px auto 50px auto
+}
+main {
+    flex:1 0 auto
+}
+#contactBox{
+    width: 100%;
+    text-align: center;
+    background: gray;
+    border: white 1px solid;
+    border-radius: 25px;
+    margin: auto auto 50px auto;
+    padding: 10px
+}
+#contactHeader{
+    margin: 20px auto 0px auto;
+    color: #4ec4f8;
+    font-family: 'Merienda', cursive;
+}
+#submitMessageBtn{
+    background: #4ec4f8;
+    border: white 1px solid;
+    color: white;
+}
+#submitMessageBtn:hover{
+    background: #ffffff;
+    border: #4ec4f8 1px solid;
+    color: #4ec4f8;
+}
+.prefix{
+    color: #4ec4f8;
+}
+.prefix:hover{
+    color: white;
+}
+.active{
+    color: white !important
+}
+input, #messageBox{
+    text-align: center !important;
+    color: white;
+    font-family: 'Alegreya Sans', cursive !important;
+}
+.row{
+    margin: 0px !important;
+}
+label{
+    font-size: 20px !important;
+    text-align: center !important
+}
+.logoDiv{
+    height: 300px
+}
+.Logo{
+    font-family: 'Righteous', cursive;
+    color: #2b292a;
+    -webkit-text-stroke: 2px #4ec4f8;
+    margin: 0px auto;
+}
+.Logo:hover{
+    color: #e5973b !important;
+    -webkit-text-stroke: 3px #2b292a;
+}
+.pageContainer{
+    position: relative;
+    height: 100%;
+}
+#ourContact{
+    background: gray;
+    width: fit-content;
+    padding: 5px;
+    border: white 1px solid;
+    border-radius: 25px;
+    text-align: center;
+    margin: auto auto 50px auto
+}
+
+/* ============ FOOTER ============== */
+#footer{
+    position:fixed;bottom:0;left:0;width:100%;
+}
+.footText{
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+
+/* ============= MEDIA QUERIES ============== */
+
+/* ====== smaller than 570px (iPhone5) ====== */
+@media only screen and (max-width: 570px) {
+}
+/* ========== larger than 800px ============= */
+@media only screen and (min-width: 800px) {
+    #contactBox{
+        width: 60%
+    }
+}
