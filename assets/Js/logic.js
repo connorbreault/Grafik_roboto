@@ -17,7 +17,7 @@ $("#submitOrderBtn").on("click", function () {
     let Color = $("#colorSelect").val().trim()
     let Size = $("#sizeSelect").val().trim()
     let Quantity = $("#quantitySelect").val().trim()
-    let File = $("#fileInput").val().trim()
+    let File = $("#linkImage").val().trim()
     let First = $("#first_name").val().trim()
     let Last = $("#last_name").val().trim()
     let Phone = $("#icon_telephone").val().trim()
@@ -29,6 +29,6 @@ $("#submitOrderBtn").on("click", function () {
     if (Product === "" || Color === "" || Size === "" || Quantity === "" || File === "" || First === "" || Last === "" || Phone === "" || Email === "" || City === "" || State === "" || Address === "" || Zipcode === "") {
         alert("Please fill out all forms")
     } else {
-        alert(`Product: ${Product} -- Color: ${Color} -- Size: ${Size} -- Quantity: ${Quantity} -- File: ${File} -- First: ${First} -- Last: ${Last} -- Phone: ${Phone} -- Email: ${Email} -- City: ${City} -- State: ${State} -- Address: ${Address} -- Zipcode: ${Zipcode}`)
+        alert(`Product: ${Product} -- Color: ${Color} -- Size: ${Size} -- Quantity: ${Quantity} -- *File: ${File}* -- First: ${First} -- Last: ${Last} -- Phone: ${Phone} -- Email: ${Email} -- City: ${City} -- State: ${State} -- Address: ${Address} -- Zipcode: ${Zipcode}`)
     }
 })

@@ -119,13 +119,12 @@ input{
     color: #e5973b !important;
 }
 #submitOrderBtn{
-    background: green;
-    border: #e5973b 1px solid;
-}
-#submitOrderBtn:hover{
     background: #e5973b;
     color: white;
     border: white 1px solid;
+}
+#submitOrderBtn:hover{
+    background: green;
 }
 #separationHR{
     border-top: 1px solid #e5973b;
@@ -137,12 +136,14 @@ input{
     color: white;
     font-family: 'Alegreya Sans', cursive;
 }
-.placeOrderCollapsible{
-    color: #2b292a;
-}
 #orangeCollapsible{
     background: #e5973b !important;
     border: #2b292a 1px solid;
+    color: #2b292a
+}
+#orangeCollapsible:hover{
+    border: white 1px solid;
+    color: white
 }
 
 
