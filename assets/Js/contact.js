@@ -1,6 +1,7 @@
 // === MATERIALIZE FUNCTIONS === //
 $(document).ready(function () {
     M.AutoInit();
+    emailjs.init(config.emailJS_key);
 });
 function js_Load() {
     document.body.style.visibility = 'visible'
