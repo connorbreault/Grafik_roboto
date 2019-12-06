@@ -145,6 +145,15 @@ input{
     border: white 1px solid;
     color: white
 }
+.product{
+    margin: auto
+}
+.productRow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

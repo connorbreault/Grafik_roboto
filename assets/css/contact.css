@@ -93,7 +93,7 @@ label{
 /* === OUR CONTACT INFO === */
 #ourContact{
     background: gray;
-    width: fit-content;
+    width: 90%;
     padding: 15px;
     border: white 1px solid;
     border-radius: 25px;
@@ -198,5 +198,8 @@ letter-spacing: 1px
 @media only screen and (min-width: 800px) {
     #contactBox{
         width: 60%
+    }
+    #ourContact{
+        width: fit-content;
     }
 }
