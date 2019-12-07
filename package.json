@@ -1,0 +1,32 @@
+{
+  "name": "bandersnatch",
+  "version": "1.0.0",
+  "description": "## This will be a choose-your-own adventure game made by Connor, Marissa and I.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.19.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeccahdz10/bandersnatch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebeccahdz10/bandersnatch/issues"
+  },
+  "homepage": "https://github.com/rebeccahdz10/bandersnatch#readme"
+}
