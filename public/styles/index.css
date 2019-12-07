@@ -9,13 +9,13 @@ body {
 
 
 /* ============ LOGO =============== */
-.Logo{
+#LogoIndex{
     font-family: 'Righteous', cursive;
     color: #2b292a;
     -webkit-text-stroke: 2px #e5973b;
     margin: auto;
 }
-.Logo:hover{
+#LogoIndex:hover{
     color: #e5973b !important;
     -webkit-text-stroke: 3px #2b292a;
 }

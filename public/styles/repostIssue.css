@@ -27,13 +27,13 @@ main {
 .logoDiv{
     height: 300px
 }
-.Logo{
+#LogoIssue{
     font-family: 'Righteous', cursive;
     color: #bccfd9;
     -webkit-text-stroke: 3px #181212;
     margin: 0px auto;
 }
-.Logo:hover{
+#LogoIssue:hover{
     color: #181212 !important;
     -webkit-text-stroke: 3px #ee6036;
 }
