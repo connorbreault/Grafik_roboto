@@ -1,8 +1,7 @@
-var emailpass = process.env.emailJS_key
 // === MATERIALIZE FUNCTIONS === //
 $(document).ready(function () {
     M.AutoInit();
-    emailjs.init(emailpass);
+    emailjs.init("user_deAIEYtIkIShexUgNNM3h");
 });
 function js_Load() {
     document.body.style.visibility = 'visible'
