@@ -1,5 +1,5 @@
 {
-  "name": "bandersnatch",
+  "name": "GrafikRoboto",
   "version": "1.0.0",
   "description": "## This will be a choose-your-own adventure game made by Connor, Marissa and I.",
   "main": "server.js",
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rebeccahdz10/bandersnatch.git"
+    "url": "git+https://github.com/connorbreault/Grafik_roboto"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rebeccahdz10/bandersnatch/issues"
+    "url": "https://github.com/connorbreault/Grafik_roboto/issues"
   },
-  "homepage": "https://github.com/rebeccahdz10/bandersnatch#readme"
+  "homepage": "https://github.com/connorbreault/Grafik_roboto#readme"
 }

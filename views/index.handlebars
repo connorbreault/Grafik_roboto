@@ -8,6 +8,9 @@
         <h1 id="shopText">Shop</h1>
         <ul class="collapsible popout expandable" data-collapsible="accordion">
             <li>
+
+
+                {{!-- STANDARD --}}
                 <div class="collapsible-header"><i class="material-icons collapseHeadText">camera</i>
                     <div class="collapseHeadText">Standard</div>
                 </div>
@@ -35,10 +38,82 @@
                                 <h6 class="center-align itemName">$2.00 per 4x9</h6>
                             </div>
                         </div>
+                        <div class="placeOrderContainer">
+                            <h1 class="center-align placeOrderText">Place order</h1>
+                            <div class="row">
+
+                                <!-- === PRODUCT === -->
+                                <div class="row">
+                                    <div class="input-field col s12 l6">
+                                        <select id="standardProductSelect">
+                                            <option value="" disabled selected>Choose your product</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                        </select>
+                                        <label class="inputLabel center-align">Select Product</label>
+                                    </div>
+
+                                    <!-- === SIZE === -->
+                                    <div class="input-field col s12 l6">
+                                        <select id="standardSizeSelect">
+                                            <option value="" disabled selected>Choose your size</option>
+                                            <option value="2x7">2in x 7in</option>
+                                            <option value="3x8">3in x 8in</option>
+                                            <option value="4x9">4in x 9in</option>
+                                            <option value="other">Custom (Price inquiry w/ owner)</option>
+                                        </select>
+                                        <label class="inputLabel">Select Size</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- === QUANTITY === -->
+                            <div class="row">
+                                <div class="input-field col s12 l8 offset-l2">
+                                    <select id="standardQuantitySelect">
+                                        <option value="" disabled selected>Choose your quantity</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                    <label class="inputLabel center-align">Select Quantity</label>
+                                </div>
+                            </div>
+
+                            <!-- === UPLOAD DESIGN === -->
+                            <h4 class="uploadImgText center-align">Link
+                                your design</h4>
+                            <h6 class="center-align" id="uploadDirections">Image file
+                                specifications will
+                                go here</h6>
+                            <hr width="40%">
+                            <div class="row">
+                                <form action="#">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>File</span>
+                                            <input type="file" id="standardLinkImage">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <a class="col s12 waves-effect waves-light btn" id="submitStandardBtn">
+                                    <i class="material-icons left">add_circle_outline</i>SUBMIT ORDER</a>
+                            </div>
                     </span>
                 </div>
             </li>
             <li>
+
+
+                {{!-- PREMIUM --}}
                 <div class="collapsible-header"><i class="material-icons collapseHeadText">new_releases</i>
                     <div class="collapseHeadText">Premium</div>
                 </div>
@@ -84,6 +159,78 @@
                                 <h6 class="center-align itemName">$3.00 per 4x9</h6>
                             </div>
                         </div>
+                        <div class="placeOrderContainer">
+                            <h1 class="center-align placeOrderText">Place order</h1>
+                            <div class="row">
+
+                                <!-- === PRODUCT === -->
+                                <div class="row">
+                                    <div class="input-field col s12 l6">
+                                        <select id="premiumProductSelect">
+                                            <option value="" disabled selected>Choose your product</option>
+                                            <option value="HolographicBlue">Holographic Blue</option>
+                                            <option value="HolographicRed">Holographic Red</option>
+                                            <option value="Chrome">Chrome</option>
+                                            <option value="Gold">Gold</option>
+                                        </select>
+                                        <label class="inputLabel center-align">Select Product</label>
+                                    </div>
+
+
+                                    <!-- === SIZE === -->
+                                    <div class="input-field col s12 l6">
+                                        <select id="premiumSizeSelect">
+                                            <option value="" disabled selected>Choose your size</option>
+                                            <option value="2x7">2in x 7in</option>
+                                            <option value="3x8">3in x 8in</option>
+                                            <option value="4x9">4in x 9in</option>
+                                            <option value="other">Custom (Price inquiry w/ owner)</option>
+                                        </select>
+                                        <label class="inputLabel">Select Size</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- === QUANTITY === -->
+                            <div class="row">
+                                <div class="input-field col s12 l8 offset-l2">
+                                    <select id="premiumQuantitySelect">
+                                        <option value="" disabled selected>Choose your quantity</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="25">30</option>
+                                    </select>
+                                    <label class="inputLabel center-align">Select Quantity</label>
+                                </div>
+                            </div>
+
+                            <!-- === UPLOAD DESIGN === -->
+                            <h4 class="uploadImgText center-align">Link
+                                your design</h4>
+                            <h6 class="center-align" id="uploadDirections">Image file
+                                specifications will
+                                go here</h6>
+                            <hr width="40%">
+                            <div class="row">
+                                <form action="#">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>File</span>
+                                            <input type="file" id="premiumLinkImage">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <a class="col s12 waves-effect waves-light btn" id="submitPremiumBtn">
+                                    <i class="material-icons left">add_circle_outline</i>SUBMIT ORDER</a>
+                            </div>
                     </span>
                 </div>
             </li>
@@ -108,64 +255,40 @@
                                 <h6 class="center-align itemName">$5.00 each</h6>
                             </div>
                         </div>
-                    </span></div>
-            </li>
-            <li>
-                <div class="collapsible-header" id="orangeCollapsible"><i
-                        class="material-icons collapseHeadText placeOrderCollapsible">add_circle_outline</i>
-                    <div class="collapseHeadText placeOrderCollapsible">Place Order</div>
-                </div>
-                <div class="collapsible-body"><span>
-                        <h1 class="center-align placeOrderText">Place order</h1>
+
                         <div class="placeOrderContainer">
+                            <h1 class="center-align placeOrderText">Place order</h1>
                             <div class="row">
 
                                 <!-- === PRODUCT === -->
                                 <div class="row">
-                                    <div class="input-field col s12 l8 offset-l2">
-                                        <select id="productSelect">
+                                    <div class="input-field col s12 l6">
+                                        <select id="houseProductSelect">
                                             <option value="" disabled selected>Choose your product</option>
-                                            <option value="Standard">Standard</option>
-                                            <option value="Holographic">Holographic</option>
-                                            <option value="Chrome">Chrome</option>
-                                            <option value="Glitter">Glitter</option>
                                             <option value="House1">House 1</option>
                                             <option value="House2">House 2</option>
                                         </select>
                                         <label class="inputLabel center-align">Select Product</label>
                                     </div>
-                                </div>
 
-                                <!-- === COLOR === -->
-                                <div class="input-field col s12 l6">
-                                    <select id="colorSelect">
-                                        <option value="" disabled selected>Choose your color</option>
-                                        <option value="Red">Red</option>
-                                        <option value="Blue">Blue</option>
-                                        <option value="Green">Green</option>
-                                        <option value="Gold">Gold</option>
-                                        <option value="Silver">Silver</option>
-                                    </select>
-                                    <label class="inputLabel center-align">Select Color</label>
-                                </div>
-
-                                <!-- === SIZE === -->
-                                <div class="input-field col s12 l6">
-                                    <select id="sizeSelect">
-                                        <option value="" disabled selected>Choose your size</option>
-                                        <option value="2x7">2in x 7in</option>
-                                        <option value="3x8">3in x 8in</option>
-                                        <option value="4x9">4in x 9in</option>
-                                        <option value="other">Custom (Price inquiry w/ owner)</option>
-                                    </select>
-                                    <label class="inputLabel">Select Size</label>
+                                    <!-- === SIZE === -->
+                                    <div class="input-field col s12 l6">
+                                        <select id="houseSizeSelect">
+                                            <option value="" disabled selected>Choose your size</option>
+                                            <option value="2x7">2in x 7in</option>
+                                            <option value="3x8">3in x 8in</option>
+                                            <option value="4x9">4in x 9in</option>
+                                            <option value="other">Custom (Price inquiry w/ owner)</option>
+                                        </select>
+                                        <label class="inputLabel">Select Size</label>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- === QUANTITY === -->
                             <div class="row">
                                 <div class="input-field col s12 l8 offset-l2">
-                                    <select id="quantitySelect">
+                                    <select id="houseQuantitySelect">
                                         <option value="" disabled selected>Choose your quantity</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -186,64 +309,88 @@
                                 go here</h6>
                             <hr width="40%">
                             <div class="row">
-                                <div class="input-field col s12 l8 offset-l2">
-                                    <input id="linkImage" type="text" class="validate">
-                                    <label for="linkImage" class="orderInputLabels">Link image here</label>
-                                </div>
-                            </div>
-                            <hr width="80%" id="separationHR">
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="first_name" type="text" class="validate">
-                                            <label for="first_name" class="orderInputLabels">First Name</label>
+                                <form action="#">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>File</span>
+                                            <input type="file" id="houseLinkImage">
                                         </div>
-                                        <div class="input-field col s6">
-                                            <input id="last_name" type="text" class="validate">
-                                            <label for="last_name" class="orderInputLabels">Last Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="icon_telephone" type="tel" class="validate">
-                                            <label for="icon_telephone" class="orderInputLabels">Telephone</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="email" type="email" class="validate">
-                                            <label for="email" class="orderInputLabels">Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input id="city" type="text" class="validate">
-                                            <label for="city" class="orderInputLabels">City</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input id="state" type="text" class="validate">
-                                            <label for="state" class="orderInputLabels">State</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="address" type="text" class="validate">
-                                            <label for="address" class="orderInputLabels">Shipping
-                                                address</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input id="zip_code" type="tel" class="validate">
-                                            <label for="zip_code" class="orderInputLabels">Zip code</label>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="row">
-                                <a class="col s12 waves-effect waves-light btn" id="submitOrderBtn">
+                                <a class="col s12 waves-effect waves-light btn" id="submitHouseBtn">
                                     <i class="material-icons left">add_circle_outline</i>SUBMIT ORDER</a>
+                            </div>
+                    </span></div>
+            </li>
+            <li>
+                <div class="collapsible-header" id="orangeCollapsible"><i
+                        class="material-icons collapseHeadText placeOrderCollapsible">add_circle_outline</i>
+                    <div class="collapseHeadText placeOrderCollapsible">Cart</div>
+                </div>
+                <div class="collapsible-body"><span>
+                        <h1 class="center-align placeOrderText">Cart</h1>
+                        <div class="placeOrderContainer">
+                            <div class="cartDiv">
+                            </div>
+                            <div class="orderUserInfo hidden">
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="first_name" type="text" class="validate">
+                                                <label for="first_name" class="orderInputLabels">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name" class="orderInputLabels">Last Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="icon_telephone" type="tel" class="validate">
+                                                <label for="icon_telephone" class="orderInputLabels">Telephone</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="email" type="email" class="validate">
+                                                <label for="email" class="orderInputLabels">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="city" type="text" class="validate">
+                                                <label for="city" class="orderInputLabels">City</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="state" type="text" class="validate">
+                                                <label for="state" class="orderInputLabels">State</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="address" type="text" class="validate">
+                                                <label for="address" class="orderInputLabels">Shipping
+                                                    address</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="zip_code" type="tel" class="validate">
+                                                <label for="zip_code" class="orderInputLabels">Zip code</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="row">
+                                    <a class="col s12 waves-effect waves-light btn" id="submitOrderBtn">
+                                        <i class="material-icons left">add_circle_outline</i>SUBMIT ORDER</a>
+                                </div>
                             </div>
                         </div>
                     </span>

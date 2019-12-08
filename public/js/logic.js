@@ -11,13 +11,51 @@ function js_Load() {
 }
 
 
+var cartItems = []
+
 // === SUBMIT ORDERS === //
+$("#submitStandardBtn").on("click", function () {
+    let Product = $("#standardProductSelect").val()
+    let Size = $("#standardSizeSelect").val()
+    let Quantity = $("#standardQuantitySelect").val()
+    let File = $("#standardLinkImage").val()
+    let newItem = {
+        Product,
+        Size,
+        Quantity,
+        File
+    }
+    cartItems.push(newItem)
+    updateCart()
+    alert(cartItems)
+})
+$("#submitPremiumBtn").on("click", function () {
+    let premiumProduct = $("#premiumProductSelect").val()
+    let premiumSize = $("#premiumSizeSelect").val()
+    let premiumQuantity = $("#premiumQuantitySelect").val()
+    let premiumFile = $("#premiumLinkImage").val()
+    alert(`${premiumProduct} ${premiumQuantity} ${premiumSize} ${premiumFile}`)
+})
+$("#submitHouseBtn").on("click", function () {
+    let houseProduct = $("#houseProductSelect").val()
+    let houseSize = $("#houseSizeSelect").val()
+    let houseQuantity = $("#houseQuantitySelect").val()
+    let houseFile = $("#houseLinkImage").val()
+    alert(`${houseProduct} ${houseQuantity} ${houseSize} ${houseFile}`)
+})
+
+function updateCart() {
+    $(".cartDiv").empty()
+    for (let i = 0; i < cartItems.length; i++) {
+        `
+        <div>
+            <h1>${cartItems[i]}</h1>
+        </div>
+        `
+    }
+}
+
 $("#submitOrderBtn").on("click", function () {
-    let Product = $("#productSelect").val()
-    let Color = $("#colorSelect").val()
-    let Size = $("#sizeSelect").val()
-    let Quantity = $("#quantitySelect").val()
-    let File = $("#linkImage").val()
     let First = $("#first_name").val()
     let Last = $("#last_name").val()
     let Phone = $("#icon_telephone").val()
@@ -26,9 +64,9 @@ $("#submitOrderBtn").on("click", function () {
     let State = $("#state").val()
     let Address = $("#address").val()
     let Zipcode = $("#zip_code").val()
-    if (Product === null || Color === null || Size === null || Quantity === null || File === "" || First === "" || Last === "" || Phone === "" || Email === "" || City === "" || State === "" || Address === "" || Zipcode === "") {
+    if (First === "" || Last === "" || Phone === "" || Email === "" || City === "" || State === "" || Address === "" || Zipcode === "") {
         alert("Please fill out all forms")
     } else {
-        alert(`Product: ${Product} -- Color: ${Color} -- Size: ${Size} -- Quantity: ${Quantity} -- *File: ${File}* -- First: ${First} -- Last: ${Last} -- Phone: ${Phone} -- Email: ${Email} -- City: ${City} -- State: ${State} -- Address: ${Address} -- Zipcode: ${Zipcode}`)
+        alert(`First: ${First} -- Last: ${Last} -- Phone: ${Phone} -- Email: ${Email} -- City: ${City} -- State: ${State} -- Address: ${Address} -- Zipcode: ${Zipcode}`)
     }
 })
