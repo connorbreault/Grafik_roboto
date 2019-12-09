@@ -47,8 +47,8 @@
                                     <div class="input-field col s12 l6">
                                         <select id="standardProductSelect">
                                             <option value="" disabled selected>Choose your product</option>
-                                            <option value="Black">Black</option>
-                                            <option value="White">White</option>
+                                            <option value="Standard Black">Black</option>
+                                            <option value="Standard White">White</option>
                                         </select>
                                         <label class="inputLabel center-align">Select Product</label>
                                     </div>
@@ -57,9 +57,9 @@
                                     <div class="input-field col s12 l6">
                                         <select id="standardSizeSelect">
                                             <option value="" disabled selected>Choose your size</option>
-                                            <option value="2x7">2in x 7in</option>
-                                            <option value="3x8">3in x 8in</option>
-                                            <option value="4x9">4in x 9in</option>
+                                            <option value="2x7-1.00">2in x 7in</option>
+                                            <option value="3x8-1.50">3in x 8in</option>
+                                            <option value="4x9-2.00">4in x 9in</option>
                                             <option value="other">Custom (Price inquiry w/ owner)</option>
                                         </select>
                                         <label class="inputLabel">Select Size</label>
@@ -145,18 +145,18 @@
                                     alt="">
                                 <h4 class="center-align itemName">Chrome</h4>
                                 <h4 class="center-align itemDescription">Chrome finish</h4>
-                                <h6 class="center-align itemName">$2.00 per 2x7</h6>
-                                <h6 class="center-align itemName">$2.50 per 3x8</h6>
-                                <h6 class="center-align itemName">$3.00 per 4x9</h6>
+                                <h6 class="center-align itemName">$1.50 per 2x7</h6>
+                                <h6 class="center-align itemName">$2.00 per 3x8</h6>
+                                <h6 class="center-align itemName">$2.50 per 4x9</h6>
                             </div>
                             <div class="col s12 m6 l4 product">
                                 <img src="/images/Products/Premium/Gold.jpg" class="responsive-img materialboxed"
                                     alt="">
                                 <h4 class="center-align itemName">Gold</h4>
                                 <h4 class="center-align itemDescription">Golden finish</h4>
-                                <h6 class="center-align itemName">$2.00 per 2x7</h6>
-                                <h6 class="center-align itemName">$2.50 per 3x8</h6>
-                                <h6 class="center-align itemName">$3.00 per 4x9</h6>
+                                <h6 class="center-align itemName">$1.50 per 2x7</h6>
+                                <h6 class="center-align itemName">$2.00 per 3x8</h6>
+                                <h6 class="center-align itemName">$2.50 per 4x9</h6>
                             </div>
                         </div>
                         <div class="placeOrderContainer">
@@ -168,8 +168,8 @@
                                     <div class="input-field col s12 l6">
                                         <select id="premiumProductSelect">
                                             <option value="" disabled selected>Choose your product</option>
-                                            <option value="HolographicBlue">Holographic Blue</option>
-                                            <option value="HolographicRed">Holographic Red</option>
+                                            <option value="Holographic Blue">Holographic Blue</option>
+                                            <option value="Holographic Red">Holographic Red</option>
                                             <option value="Chrome">Chrome</option>
                                             <option value="Gold">Gold</option>
                                         </select>
@@ -181,9 +181,9 @@
                                     <div class="input-field col s12 l6">
                                         <select id="premiumSizeSelect">
                                             <option value="" disabled selected>Choose your size</option>
-                                            <option value="2x7">2in x 7in</option>
-                                            <option value="3x8">3in x 8in</option>
-                                            <option value="4x9">4in x 9in</option>
+                                            <option value="2x7-1.50">2in x 7in</option>
+                                            <option value="3x8-2.00">3in x 8in</option>
+                                            <option value="4x9-2.50">4in x 9in</option>
                                             <option value="other">Custom (Price inquiry w/ owner)</option>
                                         </select>
                                         <label class="inputLabel">Select Size</label>
@@ -235,6 +235,8 @@
                 </div>
             </li>
             <li>
+
+                {{!-- IN HOUSE --}}
                 <div class="collapsible-header"><i class="material-icons collapseHeadText">whatshot</i>
                     <div class="collapseHeadText">In House</div>
                 </div>
@@ -275,9 +277,9 @@
                                     <div class="input-field col s12 l6">
                                         <select id="houseSizeSelect">
                                             <option value="" disabled selected>Choose your size</option>
-                                            <option value="2x7">2in x 7in</option>
-                                            <option value="3x8">3in x 8in</option>
-                                            <option value="4x9">4in x 9in</option>
+                                            <option data-value="2x7" value="5.00">2in x 7in</option>
+                                            <option data-value="3x8" value="5.00">3in x 8in</option>
+                                            <option data-value="4x9" value="5.00">4in x 9in</option>
                                             <option value="other">Custom (Price inquiry w/ owner)</option>
                                         </select>
                                         <label class="inputLabel">Select Size</label>
@@ -334,8 +336,12 @@
                 </div>
                 <div class="collapsible-body"><span>
                         <h1 class="center-align placeOrderText">Cart</h1>
-                        <div class="placeOrderContainer">
+                        <div class="placeOrderContainer center-align">
+                            <h3>Items</h3>
+
+                            <hr width="50%">
                             <div class="cartDiv">
+                                <h4>No items currently in cart...</h4>
                             </div>
                             <div class="orderUserInfo hidden">
                                 <div class="row">
