@@ -41,10 +41,6 @@ body {
     -webkit-text-stroke: 2px #e5973b;
     font-size: 80px;
 }
-#shopText:hover{
-    color: #e5973b;
-    -webkit-text-stroke: 2px white;
-}
 .collapseHeadText{
     margin: auto;
     font-size: 25px;
@@ -95,14 +91,8 @@ body {
     color: white;
     font-family: 'Merienda', cursive;
 }
-#uploadImgBtn{
-    background: #e5973b;
-    border: white 1px solid;
-}
-#uploadImgBtn:hover{
-    background: white;
-    color: #e5973b;
-    border: #e5973b 1px solid;
+.linkImgBtns{
+    background: #d48d37 !important;
 }
 .input-field.col label{
     text-align: center !important;
@@ -154,6 +144,12 @@ input{
     justify-content: center;
     align-items: center;
 }
+.addToCart{
+    background: #d48d37 !important;
+}
+.itemInfo{
+    font-size: 25px
+}
 .cartItemInfoHead{
     font-family: 'Merienda', cursive;
     color: #d48d37;
@@ -171,10 +167,12 @@ input{
     margin: 5px auto
 }
 .totalDiv{
-    font-size: 20px;
+    font-family: 'Merienda', cursive;
+    font-size: 25px;
 }
-#totalDiv{
-    color: #d48d37
+#total{
+    color: #d48d37;
+    font-size: 30px
 }
 #checkoutBtn{
     background: #d48d37

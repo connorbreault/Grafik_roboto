@@ -53,7 +53,7 @@ $("#submitPremiumBtn").on("click", function () {
 $("#submitHouseBtn").on("click", function () {
     let Product = $("#houseProductSelect").val()
     let Quantity = $("#houseQuantitySelect").val()
-    let File = $("#houseLinkImage").val()
+    // let File = $("#houseLinkImage").val()
     let SizePrice = $("#houseSizeSelect").val()
     let [Size, Price] = SizePrice.split("-")
     let itemTotal = (Price * Quantity)
@@ -61,7 +61,7 @@ $("#submitHouseBtn").on("click", function () {
         Product,
         Size,
         Quantity,
-        File,
+        // File,
         Price,
         itemTotal
     }
@@ -84,33 +84,40 @@ function updateCart() {
             // === RENDER CART ITEMS TO CART DIV === //
             let newItem = `
         <div class="cartList">
-        <h3 class="cartItemHead">Item ${[i + 1]}</h3>
         <div class="row"> 
-        <div class="col s12 l4"> 
-        <h4><div class="cartItemInfoHead">Product: </div>${cartItems[i].Product}</h4> 
-        </div> 
-        <div class="col s6 l4"> 
-        <h4><div class="cartItemInfoHead">Quantity: </div>${cartItems[i].Quantity}</h4> 
-        </div> 
-        <div class="col s6 l4"> 
-        <h4><div class="cartItemInfoHead">Size: </div>${cartItems[i].Size}</h4> 
-        </div> 
-        </div> 
-        <div class="row"> 
-        <div class="col s12 l6"> 
-        <h4><div class="cartItemInfoHead">Total: </div>$${cartItems[i].itemTotal.toFixed(2)}</h4> 
-        </div> 
-        <div class="col s12 l6">
-        <a class="btn-floating btn-large waves-effect waves-light red removeCartItem" value="${[i]}"><i class="material-icons">delete</i></a>
-        </div> 
-        </div>
-        <div class="row">
-        <div class="col s12 l8 offset-l2">
-        <p><div class="cartItemInfoHead">Img: </div>${cartItems[i].File}</p> 
-        </div> 
-        
-        </div>
+                <div class="col s8 l10">
+                    <h3 class="cartItemHead">Item ${[i + 1]}</h3>
+                </div> 
+                <div class="col s4 l2">
+                    <a class="btn-floating btn-large waves-effect waves-light red removeCartItem" value="${[i]}"><i class="material-icons">delete</i></a>
+                </div> 
+            </div>
+            
+            <div class="row"> 
+                <div class="col s6 l3"> 
+                    <div class="cartItemInfoHead">Product: </div>
+                    <h4 class="itemInfo">${cartItems[i].Product}</h4> 
+                </div> 
+                <div class="col s6 l3"> 
+                    <div class="cartItemInfoHead">Quantity: </div>
+                    <h4 class="itemInfo">${cartItems[i].Quantity}</h4> 
+                </div> 
+                <div class="col s6 l3"> 
+                    <div class="cartItemInfoHead">Total: </div>
+                    <h4 class="itemInfo">$${cartItems[i].itemTotal.toFixed(2)}</h4> 
+                </div>
+                <div class="col s6 l3"> 
+                    <div class="cartItemInfoHead">Size: </div>
+                    <h4 class="itemInfo">${cartItems[i].Size}</h4>  
+                </div> 
+            </div> 
         </div>`
+            // <div class="row">
+            // <div class="col s12 l8 offset-l2">
+            // <p><div class="cartItemInfoHead">Img: </div>${cartItems[i].File}</p> 
+            // </div> 
+
+            // </div>
             $(".cartDiv").append(newItem)
         }
         updateTotal()
@@ -125,9 +132,8 @@ function updateTotal() {
     let cartTotal = 0
     for (var l = 0; l < cartItems.length; l++) {
         cartTotal = (parseInt(cartTotal) + parseInt(cartItems[l].itemTotal))
-        console.log(`total: ${cartTotal} item:${cartItems[l].itemTotal}`)
     }
-    $("#totalDiv").html(`$${cartTotal.toFixed(2)}`)
+    $("#total").html(`$${cartTotal.toFixed(2)}`)
 }
 
 // === REMOVE ITEM === //
