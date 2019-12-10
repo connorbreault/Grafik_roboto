@@ -16,75 +16,84 @@ var cartItems = []
 // === SUBMIT ORDERS === //
 $("#submitStandardBtn").on("click", function () {
     let Product = $("#standardProductSelect").val()
-    let Size = $("#standardSizeSelect").val()
     let Quantity = $("#standardQuantitySelect").val()
     let File = $("#standardLinkImage").val()
+    let SizePrice = $("#standardSizeSelect").val()
+    let [Size, Price] = SizePrice.split("-")
+    let itemTotal = (Price * Quantity)
     let newItem = {
         Product,
         Size,
         Quantity,
         File,
+        Price,
+        itemTotal
     }
     cartItems.push(newItem)
     updateCart()
 })
 $("#submitPremiumBtn").on("click", function () {
     let Product = $("#premiumProductSelect").val()
-    let Size = $("#premiumSizeSelect").val()
     let Quantity = $("#premiumQuantitySelect").val()
     let File = $("#premiumLinkImage").val()
+    let SizePrice = $("#premiumSizeSelect").val()
+    let [Size, Price] = SizePrice.split("-")
+    let itemTotal = (Price * Quantity)
     let newItem = {
         Product,
         Size,
         Quantity,
         File,
+        Price,
+        itemTotal
     }
     cartItems.push(newItem)
     updateCart()
 })
 $("#submitHouseBtn").on("click", function () {
     let Product = $("#houseProductSelect").val()
-    let Size = $("#houseSizeSelect").attr("data-value")
-    let Price = $("#houseSizeSelect").val()
     let Quantity = $("#houseQuantitySelect").val()
-    let itemTotal = (Price * Quantity)
     let File = $("#houseLinkImage").val()
-    alert(`${itemTotal} = SIZE=${Size} => PRICE=${Price} QUANTITY=${Quantity}`)
-    // let newItem = {
-    //     Product,
-    //     Size,
-    //     Price,
-    //     Quantity,
-    //     File,
-    //     itemTotal
-    // }
-    // cartItems.push(newItem)
-    // updateCart()
+    let SizePrice = $("#houseSizeSelect").val()
+    let [Size, Price] = SizePrice.split("-")
+    let itemTotal = (Price * Quantity)
+    let newItem = {
+        Product,
+        Size,
+        Quantity,
+        File,
+        Price,
+        itemTotal
+    }
+    cartItems.push(newItem)
+    updateCart()
 })
 
+
+// === UPDATE CART === //
 function updateCart() {
     $(".cartDiv").empty()
     for (let i = 0; i < cartItems.length; i++) {
         let newItem = `
         <div class="cartList">
-        <h2>Item ${[i + 1]}</h2>
+        <h3 class="cartItemHead">Item ${[i + 1]}</h3>
         <div class="row"> 
         <div class="col s12 l4"> 
-        <h3><div class="cartItemInfoHead">Product: </div>${cartItems[i].Product}</h3> 
+        <h4><div class="cartItemInfoHead">Product: </div>${cartItems[i].Product}</h4> 
         </div> 
         <div class="col s6 l4"> 
-        <h3><div class="cartItemInfoHead">Quantity: </div>${cartItems[i].Quantity}</h3> 
+        <h4><div class="cartItemInfoHead">Quantity: </div>${cartItems[i].Quantity}</h4> 
         </div> 
         <div class="col s6 l4"> 
-        <h3><div class="cartItemInfoHead">Size: </div>${cartItems[i].Size}</h3> 
+        <h4><div class="cartItemInfoHead">Size: </div>${cartItems[i].Size}</h4> 
         </div> 
         </div> 
         <div class="row"> 
-        <div class="col s12 l4"> 
-        <h3><div class="cartItemInfoHead">Price: </div>${cartItems[i].Price}</h3> 
+        <div class="col s12 l6"> 
+        <h4><div class="cartItemInfoHead">Price: </div>$${cartItems[i].Price}</h4> 
         </div> 
-        <div class="col s6 l4"> 
-        <h3><div class="cartItemInfoHead">Total: </div>${cartItems[i].itemTotal}</h3> 
+        <div class="col s12 l6"> 
+        <h4><div class="cartItemInfoHead">Total: </div>$${cartItems[i].itemTotal}</h4> 
         </div> 
         </div>
         <div class="row">
@@ -100,19 +109,17 @@ function updateCart() {
     }
 }
 
-// $(".removeCartItem").addEventListener("click", function () {
-//     alert("hi")
-//     this.parentElement.parentElement.parentElement.remove()
-// })
+// === REMOVE ITEM === //
 $(document.body).on("click", ".removeCartItem", function () {
-    let value = $(this).val()
-    // this.parentElement.parentElement.parentElement.remove()
+    let value = $(this).attr("value")
     if (value > -1) {
         cartItems.splice(value, 1);
     }
     updateCart()
 })
 
+
+// === FINAL SUBMIT ORDER === //
 $("#submitOrderBtn").on("click", function () {
     let First = $("#first_name").val()
     let Last = $("#last_name").val()
