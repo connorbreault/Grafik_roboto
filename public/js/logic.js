@@ -73,8 +73,16 @@ $("#submitHouseBtn").on("click", function () {
 // === UPDATE CART === //
 function updateCart() {
     $(".cartDiv").empty()
-    for (let i = 0; i < cartItems.length; i++) {
-        let newItem = `
+
+    // === SHOW/HIDE CART DIVS === //
+    if (cartItems.length > 0) {
+        $(".checkoutButtonDiv").removeClass("hidden")
+        $('.noItemsInCart').addClass("hidden")
+
+
+        for (let i = 0; i < cartItems.length; i++) {
+            // === RENDER CART ITEMS TO CART DIV === //
+            let newItem = `
         <div class="cartList">
         <h3 class="cartItemHead">Item ${[i + 1]}</h3>
         <div class="row"> 
@@ -90,23 +98,36 @@ function updateCart() {
         </div> 
         <div class="row"> 
         <div class="col s12 l6"> 
-        <h4><div class="cartItemInfoHead">Price: </div>$${cartItems[i].Price}</h4> 
+        <h4><div class="cartItemInfoHead">Total: </div>$${cartItems[i].itemTotal.toFixed(2)}</h4> 
         </div> 
-        <div class="col s12 l6"> 
-        <h4><div class="cartItemInfoHead">Total: </div>$${cartItems[i].itemTotal}</h4> 
-        </div> 
-        </div>
-        <div class="row">
-        <div class="col s12 l8">
-        <p><div class="cartItemInfoHead">Img: </div>${cartItems[i].File}</p> 
-        </div> 
-        <div class="col s12 l2">
+        <div class="col s12 l6">
         <a class="btn-floating btn-large waves-effect waves-light red removeCartItem" value="${[i]}"><i class="material-icons">delete</i></a>
         </div> 
         </div>
+        <div class="row">
+        <div class="col s12 l8 offset-l2">
+        <p><div class="cartItemInfoHead">Img: </div>${cartItems[i].File}</p> 
+        </div> 
+        
+        </div>
         </div>`
-        $(".cartDiv").append(newItem)
+            $(".cartDiv").append(newItem)
+        }
+        updateTotal()
+
+    } else {
+        $(".checkoutButtonDiv").addClass("hidden")
+        $('.noItemsInCart').removeClass("hidden")
     }
+}
+function updateTotal() {
+    // === ADD AND UPDATE TOTAL === //
+    let cartTotal = 0
+    for (var l = 0; l < cartItems.length; l++) {
+        cartTotal = (parseInt(cartTotal) + parseInt(cartItems[l].itemTotal))
+        console.log(`total: ${cartTotal} item:${cartItems[l].itemTotal}`)
+    }
+    $("#totalDiv").html(`$${cartTotal.toFixed(2)}`)
 }
 
 // === REMOVE ITEM === //

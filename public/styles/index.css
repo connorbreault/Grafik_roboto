@@ -154,6 +154,31 @@ input{
     justify-content: center;
     align-items: center;
 }
+.cartItemInfoHead{
+    font-family: 'Merienda', cursive;
+    color: #d48d37;
+    font-size: 20px;
+    line-height: 30px;
+}
+.cartList{
+    background: #2b292a;
+    border: 1px black solid;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px auto
+}
+.cartItemHead{
+    margin: 5px auto
+}
+.totalDiv{
+    font-size: 20px;
+}
+#totalDiv{
+    color: #d48d37
+}
+#checkoutBtn{
+    background: #d48d37
+}
 
 
 
@@ -178,22 +203,6 @@ input{
 }
 
 
-.cartItemInfoHead{
-    font-family: 'Merienda', cursive;
-    color: #d48d37;
-    font-size: 20px;
-    line-height: 30px;
-}
-.cartList{
-    background: #2b292a;
-    border: 1px black solid;
-    border-radius: 25px;
-    padding: 10px;
-    margin: 10px auto
-}
-.cartItemHead{
-    margin: 5px auto
-}
 
 /* ============= MEDIA QUERIES ============== */
 
