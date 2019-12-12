@@ -19,56 +19,68 @@ $("#submitStandardBtn").on("click", function () {
     let Quantity = $("#standardQuantitySelect").val()
     let File = $("#standardLinkImage").val()
     let SizePrice = $("#standardSizeSelect").val()
-    let [Size, Price] = SizePrice.split("-")
-    let itemTotal = (Price * Quantity)
-    let newItem = {
-        Product,
-        Size,
-        Quantity,
-        File,
-        Price,
-        itemTotal
+    if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
+        alert("Please fill out all inputs")
+    } else {
+        let [Size, Price] = SizePrice.split("-")
+        let itemTotal = (Price * Quantity)
+        let newItem = {
+            Product,
+            Size,
+            Quantity,
+            File,
+            Price,
+            itemTotal
+        }
+        cartItems.push(newItem)
+        updateCart()
+        alert("Added to cart!")
     }
-    cartItems.push(newItem)
-    updateCart()
 })
 $("#submitPremiumBtn").on("click", function () {
     let Product = $("#premiumProductSelect").val()
     let Quantity = $("#premiumQuantitySelect").val()
     let File = $("#premiumLinkImage").val()
     let SizePrice = $("#premiumSizeSelect").val()
-    let [Size, Price] = SizePrice.split("-")
-    let itemTotal = (Price * Quantity)
-    let newItem = {
-        Product,
-        Size,
-        Quantity,
-        File,
-        Price,
-        itemTotal
+    if (Product === "" || Quantity === "" || SizePrice === "") {
+        alert("Please fill out all inputs")
+    } else {
+        let [Size, Price] = SizePrice.split("-")
+        let itemTotal = (Price * Quantity)
+        let newItem = {
+            Product,
+            Size,
+            Quantity,
+            File,
+            Price,
+            itemTotal
+        }
+        cartItems.push(newItem)
+        updateCart()
+        alert("Added to cart!")
     }
-    cartItems.push(newItem)
-    updateCart()
 })
 $("#submitHouseBtn").on("click", function () {
     let Product = $("#houseProductSelect").val()
     let Quantity = $("#houseQuantitySelect").val()
-    // let File = $("#houseLinkImage").val()
     let SizePrice = $("#houseSizeSelect").val()
-    let [Size, Price] = SizePrice.split("-")
-    let itemTotal = (Price * Quantity)
-    let newItem = {
-        Product,
-        Size,
-        Quantity,
-        // File,
-        Price,
-        itemTotal
+    if (Product === "" || Quantity === "" || SizePrice === "") {
+        alert("Please fill out all inputs")
+    } else {
+        let [Size, Price] = SizePrice.split("-")
+        let itemTotal = (Price * Quantity)
+        let newItem = {
+            Product,
+            Quantity,
+            Size,
+            Price,
+            itemTotal
+        }
+        cartItems.push(newItem)
+        updateCart()
+        alert("Added to cart!")
     }
-    cartItems.push(newItem)
-    updateCart()
 })
-
 
 // === UPDATE CART === //
 function updateCart() {
@@ -145,6 +157,13 @@ $(document.body).on("click", ".removeCartItem", function () {
     updateCart()
 })
 
+
+
+// === CHECKOUT SHOW/HIDES === //
+$("#checkoutBtn").on("click", function () {
+    $(".cartDiv , .checkoutButtonDiv").addClass("hidden")
+    $(".orderUserInfo").removeClass("hidden")
+})
 
 // === FINAL SUBMIT ORDER === //
 $("#submitOrderBtn").on("click", function () {

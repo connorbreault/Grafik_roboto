@@ -62,8 +62,8 @@ body {
     font-family: 'Merienda', cursive;
 }
 .itemDescription{
-    color: #e5973b;
-    font-family: 'Vibes', cursive;
+    color: white;
+    font-family: 'Merienda', cursive;
 }
 .placeOrderText{
     color: #e5973b;
@@ -148,13 +148,16 @@ input{
     background: #d48d37 !important;
 }
 .itemInfo{
-    font-size: 25px
+    font-size: 20px;
+    height: 45px;
+    font-family: 'Merienda', cursive;
 }
 .cartItemInfoHead{
     font-family: 'Merienda', cursive;
     color: #d48d37;
     font-size: 20px;
     line-height: 30px;
+    margin: 20px
 }
 .cartList{
     background: #2b292a;
@@ -164,7 +167,8 @@ input{
     margin: 10px auto
 }
 .cartItemHead{
-    margin: 5px auto
+    margin: 5px auto;
+    font-family: 'Merienda', cursive;
 }
 .totalDiv{
     font-family: 'Merienda', cursive;
@@ -172,7 +176,8 @@ input{
 }
 #total{
     color: #d48d37;
-    font-size: 30px
+    font-size: 30px;
+    margin: 0px auto 10px auto
 }
 #checkoutBtn{
     background: #d48d37
