@@ -6,10 +6,10 @@ $(document).ready(function () {
         accordion: false
     });
 });
+// === ONLOAD === //
 function js_Load() {
     document.body.style.visibility = 'visible'
 }
-
 
 var cartItems = []
 
@@ -20,7 +20,7 @@ $("#submitStandardBtn").on("click", function () {
     let File = $("#standardLinkImage").val()
     let SizePrice = $("#standardSizeSelect").val()
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
-        alert("Please fill out all inputs")
+        $('#errorModal').modal("open")
     } else {
         let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
@@ -32,9 +32,13 @@ $("#submitStandardBtn").on("click", function () {
             Price,
             itemTotal
         }
+        // UPDATE CART //
         cartItems.push(newItem)
         updateCart()
-        alert("Added to cart!")
+        // SHOW MODAL //
+        $('#modalItem').empty()
+        $("#modalItem").html(Product)
+        $('#addedModal').modal("open")
     }
 })
 $("#submitPremiumBtn").on("click", function () {
@@ -43,7 +47,7 @@ $("#submitPremiumBtn").on("click", function () {
     let File = $("#premiumLinkImage").val()
     let SizePrice = $("#premiumSizeSelect").val()
     if (Product === "" || Quantity === "" || SizePrice === "") {
-        alert("Please fill out all inputs")
+        $('#errorModal').modal("open")
     } else {
         let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
@@ -55,9 +59,13 @@ $("#submitPremiumBtn").on("click", function () {
             Price,
             itemTotal
         }
+        // UPDATE CART //
         cartItems.push(newItem)
         updateCart()
-        alert("Added to cart!")
+        // SHOW MODAL //
+        $('#modalItem').empty()
+        $("#modalItem").html(Product)
+        $('#addedModal').modal("open")
     }
 })
 $("#submitHouseBtn").on("click", function () {
@@ -65,7 +73,7 @@ $("#submitHouseBtn").on("click", function () {
     let Quantity = $("#houseQuantitySelect").val()
     let SizePrice = $("#houseSizeSelect").val()
     if (Product === "" || Quantity === "" || SizePrice === "") {
-        alert("Please fill out all inputs")
+        $('#errorModal').modal("open")
     } else {
         let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
@@ -76,11 +84,17 @@ $("#submitHouseBtn").on("click", function () {
             Price,
             itemTotal
         }
+        // UPDATE CART //
         cartItems.push(newItem)
         updateCart()
-        alert("Added to cart!")
+        // SHOW MODAL //
+        $('#modalItem').empty()
+        $("#modalItem").html(Product)
+        $('#addedModal').modal("open")
     }
 })
+
+
 
 // === UPDATE CART === //
 function updateCart() {
@@ -139,14 +153,19 @@ function updateCart() {
         $('.noItemsInCart').removeClass("hidden")
     }
 }
+
+
+
+// === ADD AND UPDATE TOTAL === //
 function updateTotal() {
-    // === ADD AND UPDATE TOTAL === //
     let cartTotal = 0
     for (var l = 0; l < cartItems.length; l++) {
         cartTotal = (parseInt(cartTotal) + parseInt(cartItems[l].itemTotal))
     }
-    $("#total").html(`$${cartTotal.toFixed(2)}`)
+    $(".total").html(`$${cartTotal.toFixed(2)}`)
 }
+
+
 
 // === REMOVE ITEM === //
 $(document.body).on("click", ".removeCartItem", function () {
@@ -159,13 +178,7 @@ $(document.body).on("click", ".removeCartItem", function () {
 
 
 
-// === CHECKOUT SHOW/HIDES === //
-$("#checkoutBtn").on("click", function () {
-    $(".cartDiv , .checkoutButtonDiv").addClass("hidden")
-    $(".orderUserInfo").removeClass("hidden")
-})
-
-// === FINAL SUBMIT ORDER === //
+// === SUBMIT ORDER INFO === //
 $("#submitOrderBtn").on("click", function () {
     let First = $("#first_name").val()
     let Last = $("#last_name").val()
@@ -176,8 +189,51 @@ $("#submitOrderBtn").on("click", function () {
     let Address = $("#address").val()
     let Zipcode = $("#zip_code").val()
     if (First === "" || Last === "" || Phone === "" || Email === "" || City === "" || State === "" || Address === "" || Zipcode === "") {
-        alert("Please fill out all forms")
+        $('#errorModal').modal("open")
     } else {
-        alert(`First: ${First} -- Last: ${Last} -- Phone: ${Phone} -- Email: ${Email} -- City: ${City} -- State: ${State} -- Address: ${Address} -- Zipcode: ${Zipcode}`)
+        $(".orderUserInfo").addClass("hidden")
+        $(".plusTaxAndShipping").removeClass("hidden")
+        $(".orderName").html(`${First} ${Last}`)
+        $(".orderEmail").html(Email)
+        $(".deliverState").html(`${City}, ${State}`)
+        $(".deliverAddress").html(Address)
     }
+})
+
+function addShippingAndTax() {
+    let cartTotal = 0
+    for (var l = 0; l < cartItems.length; l++) {
+        let newRow = (`<div class="row">
+        <div class="col s6 l6">
+            <div class="orderItem orange-text">${cartItems[l].Product}</div>
+        </div>
+        <div class="col s6 l6">
+            <div class="orderQuantity orange-text">${cartItems[l].Quantity}</div>
+        </div>
+        </div>`)
+        $(".appendHere").append(newRow)
+        cartTotal = (parseInt(cartTotal) + parseInt(cartItems[l].itemTotal))
+    }
+    let ShipCost = 5
+    // Get to calculate shipping, then ShipCost = APIcost
+    let Tax = 5
+    // Figure out how to calculate tax for this type of item
+    let fullTotal = cartTotal + ShipCost + Tax
+    $(".fullTotal").html(`$${fullTotal.toFixed(2)}`)
+}
+
+
+// === CHECKOUT SHOW/HIDES === //
+$("#checkoutBtn").on("click", function () {
+    $(".cartDiv , .checkoutButtonDiv").addClass("hidden")
+    $(".orderUserInfo").removeClass("hidden")
+    addShippingAndTax()
+})
+$("#confirmBtn").on("click", function () {
+    $(".plusTaxAndShipping").addClass("hidden")
+    $(".paypal").removeClass("hidden")
+})
+$("#cancelBtn").on("click", function () {
+    $(".cartDiv , .checkoutButtonDiv").removeClass("hidden")
+    $(".orderUserInfo, .plusTaxAndShipping").addClass("hidden")
 })

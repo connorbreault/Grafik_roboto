@@ -4,6 +4,22 @@
         <div class="parallax"><img class="parallaxImg" src="/images/static/top_parallax.jpg"></div>
     </div>
 
+    <!-- Modal Structure -->
+    <div id="addedModal" class="modal">
+        <div class="modal-content">
+            <h4 id="modalItem" class="orange-text"></h4>
+            <h5>added to cart!</h5>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text">Okay</a>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <h4>Please fill out all inputs</h3>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text">Okay</a>
+        </div>
+    </div>
+
     <div id="mainContainer">
         <h1 id="shopText">Shop</h1>
         <ul class="collapsible popout expandable" data-collapsible="accordion">
@@ -234,7 +250,8 @@
                                     </form>
                                 </div>
                                 <div class="row">
-                                    <a class="col s12 waves-effect waves-light btn addToCart" id="submitPremiumBtn">
+                                    <a class="col s12 waves-effect waves-light btn addToCart modal-trigger"
+                                        href="#addedModal" id="submitPremiumBtn">
                                         <i class="material-icons left">add_shopping_cart</i>SUBMIT ORDER</a>
                                 </div>
                             </form>
@@ -313,7 +330,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <a class="col s12 waves-effect waves-light btn addToCart" id="submitHouseBtn">
+                                    <a class="col s12 waves-effect waves-light btn addToCart modal-trigger"
+                                        href="#addedModal" id="submitHouseBtn">
                                         <i class="material-icons left">add_shopping_cart</i>Add to cart</a>
                                 </div>
                             </form>
@@ -337,7 +355,7 @@
                             <div class="checkoutButtonDiv hidden row">
                                 <div class="totalDiv">
                                     <div class="col s12 l2 offset-l5">Total = </div>
-                                    <div class="col s12 l2" id="total"></div>
+                                    <div class="col s12 l2 total"></div>
                                 </div>
                                 <div class="col s12 l3">
                                     <a class="waves-effect waves-light btn" id="checkoutBtn">
@@ -396,6 +414,65 @@
                                             <i class="material-icons left">add_circle_outline</i>SUBMIT ORDER</a>
                                     </div>
                                 </form>
+                            </div>
+                            <div class="plusTaxAndShipping hidden">
+                                <h3 class="orange-text">Is this correct?</h3>
+                                <h5>Name: <div class="orderName orange-text"></div>
+                                </h5>
+                                <h5>Email: <div class="orderEmail orange-text"></div>
+                                </h5>
+                                <div class="finalizeItems">
+                                    <div class="row">
+                                        <div class="col s6 l6">
+                                            <h5>Items:</h5>
+                                        </div>
+                                        <div class="col s6 l6">
+                                            <h5>Quantity:</h5>
+                                        </div>
+                                    </div>
+                                    <div class="appendHere"></div>
+                                </div>
+                                <div class="totalPlusDiv">
+                                    <div class="row">
+                                        <div class="col s6 l6">
+                                            <h5>Total</h5>
+                                            <h5>Shipping</h5>
+                                            <h5>Tax</h5>
+                                        </div>
+                                        <div class="col s6 l6">
+                                            <h6 class="total"></h6>
+                                            <h6 class="shippingTotal">$5.00</h6>
+                                            <h6 class="taxTotal">$5.00</h6>
+                                        </div>
+                                    </div>
+
+                                    <hr width="50%">
+                                    <h4>TOTAL =<div class="fullTotal"></div>
+                                    </h4>
+                                </div>
+                                <h4>Estimated arrival date:<div class="deliverDate orange-text"></div>
+                                </h4>
+                                <h4>Delivered to:
+                                    <div class="deliverState orange-text"></div>
+                                    <hr width="50%">
+                                    <div class="deliverAddress orange-text"></div>
+                                </h4>
+
+                                <div class="row">
+                                    <div class="col s12 l6">
+                                        <a class="waves-effect waves-light btn red darken-2" id="cancelBtn">
+                                            <i class="material-icons left">clear</i>Cancel
+                                        </a>
+                                    </div>
+                                    <div class="col s12 l6">
+                                        <a class="waves-effect waves-light btn green lighten-2" id="confirmBtn">
+                                            <i class="material-icons left">done</i>Confirm
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="paypal hidden">
+                                <h4>Paypal</h4>
                             </div>
                         </div>
                     </span>

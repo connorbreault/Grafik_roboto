@@ -92,7 +92,7 @@ body {
     font-family: 'Merienda', cursive;
 }
 .linkImgBtns{
-    background: #d48d37 !important;
+    background: #e5973b !important;
 }
 .input-field.col label{
     text-align: center !important;
@@ -145,7 +145,7 @@ input{
     align-items: center;
 }
 .addToCart{
-    background: #d48d37 !important;
+    background: #e5973b !important;
 }
 .itemInfo{
     font-size: 20px;
@@ -154,10 +154,9 @@ input{
 }
 .cartItemInfoHead{
     font-family: 'Merienda', cursive;
-    color: #d48d37;
+    color: #e5973b;
     font-size: 20px;
     line-height: 30px;
-    margin: 20px
 }
 .cartList{
     background: #2b292a;
@@ -174,22 +173,45 @@ input{
     font-family: 'Merienda', cursive;
     font-size: 25px;
 }
-#total{
-    color: #d48d37;
+.total, .shippingTotal, .taxTotal, .fullTotal{
+    color: #e5973b;
     font-size: 30px;
     margin: 0px auto 10px auto
 }
 #checkoutBtn{
-    background: #d48d37
+    background: #e5973b
 }
 
+
+/* ====== PLUS TAX AND SHIPPING ===== */
+.plusTaxAndShipping{
+    font-family: 'Merienda', cursive;
+}
+.orderEmail{
+    font-size: medium;
+    word-wrap: break-word
+}
+.finalizeItems{
+    margin: 25px auto
+}
+
+
+/* ============ MODAL =============== */
+#addedModal, #errorModal{
+    background: #2b292a;
+    border: #e5973b 2px solid;
+    border-radius: 25px;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-align: center
+}
 
 
 /* ========== CONTACT BOX =========== */
 #contactBox{
     background: #2b292a;
-    color: #d48d37;
-    border: #d48d37 2px solid;
+    color: #e5973b;
+    border: #e5973b 2px solid;
     opacity: 0.9;
     margin: auto;
     width: 75%;
@@ -202,7 +224,7 @@ input{
     color: #c7d3dd !important
 }
 .contactBoxIco:hover{
-    color: #d48d37 !important
+    color: #e5973b !important
 }
 
 
