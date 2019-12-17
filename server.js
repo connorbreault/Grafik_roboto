@@ -56,14 +56,14 @@ app.post('/pay', (req, res) => {
                 "items": [{
                     "name": "Red Sox Hat",
                     "sku": "001",
-                    "price": "25.00",
+                    "price": "5.00",
                     "currency": "USD",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "USD",
-                "total": "25.00"
+                "total": "5.00"
             },
             "description": "Hat for the best team ever"
         }]
@@ -92,7 +92,7 @@ app.get('/success', (req, res) => {
         "transactions": [{
             "amount": {
                 "currency": "USD",
-                "total": "25.00"
+                "total": "4.00"
             }
         }]
     };
@@ -103,12 +103,12 @@ app.get('/success', (req, res) => {
             throw error;
         } else {
             console.log(JSON.stringify(payment));
-            res.render('suh');
+            res.render('successful');
         }
     });
 });
 
-app.get('/cancel', (req, res) => res.send('Cancelled'));
+app.get('/cancel', (req, res) => res.render('cancelled'));
 
 
 // Starting the server, syncing our models ------------------------------------/
