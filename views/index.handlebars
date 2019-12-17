@@ -351,6 +351,9 @@
                             </div>
                             <div class="noItemsInCart">
                                 <h4>No items currently in cart...</h4>
+                                <form action="/pay" method="POST">
+                                    <input type="submit" value="Buy">
+                                </form>
                             </div>
                             <div class="checkoutButtonDiv hidden row">
                                 <div class="totalDiv">
@@ -442,7 +445,7 @@
                                         <div class="col s6 l6">
                                             <h6 class="total"></h6>
                                             <h6 class="shippingTotal">$5.00</h6>
-                                            <h6 class="taxTotal">$5.00</h6>
+                                            <h6 class="taxTotal"></h6>
                                         </div>
                                     </div>
 
@@ -465,14 +468,18 @@
                                         </a>
                                     </div>
                                     <div class="col s12 l6">
-                                        <a class="waves-effect waves-light btn green lighten-2" id="confirmBtn">
-                                            <i class="material-icons left">done</i>Confirm
-                                        </a>
+                                        <form action="/pay" method="POST">
+                                            <input type="submit" value="Buy"><a
+                                                class="waves-effect waves-light btn green lighten-2" id="confirmBtn"
+                                                type="submit" value="Buy">
+                                                <i class="material-icons left">done</i>Confirm
+                                            </a>
+                                            </input>
+                                        </form>
+                                        <h2>OR</h2>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="paypal hidden">
-                                <h4>Paypal</h4>
                             </div>
                         </div>
                     </span>

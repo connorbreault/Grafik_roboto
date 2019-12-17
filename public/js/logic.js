@@ -216,7 +216,8 @@ function addShippingAndTax() {
     }
     let ShipCost = 5
     // Get to calculate shipping, then ShipCost = APIcost
-    let Tax = 5
+    let Tax = ((cartTotal * 15) / 100)
+    $(".taxTotal").html(`$${Tax.toFixed(2)}`)
     // Figure out how to calculate tax for this type of item
     let fullTotal = cartTotal + ShipCost + Tax
     $(".fullTotal").html(`$${fullTotal.toFixed(2)}`)
@@ -228,10 +229,6 @@ $("#checkoutBtn").on("click", function () {
     $(".cartDiv , .checkoutButtonDiv").addClass("hidden")
     $(".orderUserInfo").removeClass("hidden")
     addShippingAndTax()
-})
-$("#confirmBtn").on("click", function () {
-    $(".plusTaxAndShipping").addClass("hidden")
-    $(".paypal").removeClass("hidden")
 })
 $("#cancelBtn").on("click", function () {
     $(".cartDiv , .checkoutButtonDiv").removeClass("hidden")
