@@ -237,17 +237,23 @@
                                     go here</h6>
                                 <hr width="40%">
                                 <div class="row">
-                                    <form action="#">
-                                        <div class="file-field input-field">
-                                            <div class="btn linkImgBtns">
-                                                <span>File</span>
-                                                <input type="file" class="linkImgBtns" id="premiumLinkImage">
+                                    <div class="col s12">
+                                        <form action="#">
+                                            <div class="file-field input-field">
+                                                <div class="btn linkImgBtns">
+                                                    <span>File</span>
+                                                    <input type="file" class="linkImgBtns" id="premiumLinkImage">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
                                             </div>
-                                            <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text">
-                                            </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
+                                    <div class="col s12 center-align" class="image-preview" id="imagePreview">
+                                        <img src="" alt="Image Preview" class="image-preview__image hidden">
+                                        <span class="image-preview__default-text">Image Preview</span>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <a class="col s12 waves-effect waves-light btn addToCart modal-trigger"

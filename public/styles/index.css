@@ -195,7 +195,24 @@ input{
     margin: 25px auto
 }
 
-
+.image-preview 
+        {
+        width: 150px; 
+        min-height: 150px; 
+        border: 2px solid #dddddd; 
+        margin-top: 15px; 
+        
+        
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-weight: bold; 
+        color: 11#cccccc; 
+        } 
+        .image-preview__image 
+        { 
+        width: 100%; 
+        }
 /* ============ MODAL =============== */
 #addedModal, #errorModal{
     background: #2b292a;

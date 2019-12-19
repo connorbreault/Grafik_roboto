@@ -1,7 +1,14 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+
+// PAYPAL SETUP
 const paypal = require("paypal-rest-sdk")
+paypal.configure({
+    'mode': 'sandbox', //sandbox or live
+    'client_id': 'ASOj39ui1jwfCC4wrJmnuwVu4h2GqTznEK4fssniw2z5EzXpQhid8gppnKM_84BI_DR7PHzivszAvf5G',
+    'client_secret': 'EG8crd1wd1mm9JaZ2P6yROMge_AkBNiT7XlN1q4bnw6Bocpr5TB0_WFNjPdmT7TZAWhXVKmGLLpnMqNL'
+});
 
 // var db = require("./models");
 // response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
@@ -34,11 +41,7 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
     syncOptions.force = true;
 }
-paypal.configure({
-    'mode': 'sandbox', //sandbox or live
-    'client_id': 'ASOj39ui1jwfCC4wrJmnuwVu4h2GqTznEK4fssniw2z5EzXpQhid8gppnKM_84BI_DR7PHzivszAvf5G',
-    'client_secret': 'EG8crd1wd1mm9JaZ2P6yROMge_AkBNiT7XlN1q4bnw6Bocpr5TB0_WFNjPdmT7TZAWhXVKmGLLpnMqNL'
-});
+
 app.get('/', (req, res) => res.render('index'));
 
 app.post('/pay', (req, res) => {
@@ -92,7 +95,7 @@ app.get('/success', (req, res) => {
         "transactions": [{
             "amount": {
                 "currency": "USD",
-                "total": "4.00"
+                "total": "5.00"
             }
         }]
     };

@@ -95,6 +95,27 @@ $("#submitHouseBtn").on("click", function () {
 })
 
 
+const inpFile = $("#premiumLinkImage")
+const previewContainer = $("#imagePreview")
+const previewImage = $(".image-preview__image")
+
+inpFile.on("change", function () {
+    const file = this.files[0]
+    if (file) {
+        const reader = new FileReader()
+
+        reader.onload = readSuccess
+        function readSuccess() {
+            console.log(this.result)
+            $(".image-preview__default-text").addClass("hidden")
+            previewImage.attr("src", this.result)
+            previewImage.removeClass("hidden")
+        }
+
+        reader.readAsDataURL(file)
+    }
+})
+
 
 // === UPDATE CART === //
 function updateCart() {
@@ -107,6 +128,7 @@ function updateCart() {
 
 
         for (let i = 0; i < cartItems.length; i++) {
+            itemCount = 0
             // === RENDER CART ITEMS TO CART DIV === //
             let newItem = `
         <div class="cartList">
@@ -136,6 +158,10 @@ function updateCart() {
                     <div class="cartItemInfoHead">Size: </div>
                     <h4 class="itemInfo">${cartItems[i].Size}</h4>  
                 </div> 
+                <div class="col s12"> 
+                    <div class="cartItemInfoHead">Img: </div>
+                    <img src="" alt="" id="cartimg${itemCount}"> 
+                </div> 
             </div> 
         </div>`
             // <div class="row">
@@ -144,7 +170,18 @@ function updateCart() {
             // </div> 
 
             // </div>
+            const selectedFile = document.getElementById('premiumLinkImage').files[i]
+            if (selectedFile) {
+                const reader = new FileReader()
+                reader.onload = readSuccess
+                function readSuccess() {
+                    console.log(this.result)
+                    $("#cartimg" + itemCount).attr("src", this.result)
+                }
+                reader.readAsDataURL(selectedFile)
+            }
             $(".cartDiv").append(newItem)
+            itemCount++
         }
         updateTotal()
 

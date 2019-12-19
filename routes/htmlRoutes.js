@@ -16,16 +16,6 @@ module.exports = function (app) {
         res.render("reportIssue");
     });
 
-    // Load example page and pass in an example by id
-    // app.get("/questions/:id", function (req, res) {
-    //     db.question.findOne({ where: { id: req.params.id } }).then(function (question_db) {
-    //         res.render("question", {
-    //             question: question_db
-    //         });
-    //         console.log(res.body)
-    //     });
-    // });
-
     // Render 404 page for any unmatched routes
     // app.get("*", function (req, res) {
     //     res.render("404");
