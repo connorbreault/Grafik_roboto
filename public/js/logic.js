@@ -94,7 +94,6 @@ $("#submitHouseBtn").on("click", function () {
     }
 })
 
-
 let standardInpFile = $("#standardLinkImage")
 let standardPreviewContainer = $("#standardImagePreview")
 let standardPreviewImage = $(".standardImage-preview__image")
@@ -237,7 +236,6 @@ $(document.body).on("click", ".removeCartItem", function () {
     }
     updateCart()
 })
-
 
 
 // === SUBMIT ORDER INFO === //
