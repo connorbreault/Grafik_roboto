@@ -94,23 +94,22 @@ $("#submitHouseBtn").on("click", function () {
     }
 })
 
+var storageKey = 0
 let standardInpFile = $("#standardLinkImage")
 let standardPreviewContainer = $("#standardImagePreview")
 let standardPreviewImage = $(".standardImage-preview__image")
 standardInpFile.on("change", function () {
-    console.log(this.files)
     let file = this.files[this.files.length - 1]
     if (file) {
         let reader = new FileReader()
-
         reader.onload = readSuccess
         function readSuccess() {
-            console.log(this.result)
             $(".standardImage-preview__default-text").addClass("hidden")
             standardPreviewImage.attr("src", this.result)
             standardPreviewImage.removeClass("hidden")
+            sessionStorage.setItem("savedImg" + storageKey, this.result)
+            storageKey++
         }
-
         reader.readAsDataURL(file)
     }
 })
@@ -119,19 +118,17 @@ let premiumInpFile = $("#premiumLinkImage")
 let premiumPreviewContainer = $("#premiumImagePreview")
 let premiumPreviewImage = $(".premiumImage-preview__image")
 premiumInpFile.on("change", function () {
-    console.log(this.files)
     let file = this.files[this.files.length - 1]
     if (file) {
         let reader = new FileReader()
-
         reader.onload = readSuccess
         function readSuccess() {
-            console.log(this.result)
             $(".premiumImage-preview__default-text").addClass("hidden")
             premiumPreviewImage.attr("src", this.result)
             premiumPreviewImage.removeClass("hidden")
+            sessionStorage.setItem("savedImg" + storageKey, this.result)
+            storageKey++
         }
-
         reader.readAsDataURL(file)
     }
 })
@@ -145,9 +142,8 @@ function updateCart() {
     if (cartItems.length > 0) {
         $(".checkoutButtonDiv").removeClass("hidden")
         $('.noItemsInCart').addClass("hidden")
-
-
         let itemCount = 0
+
         for (let i = 0; i < cartItems.length; i++) {
             // === RENDER CART ITEMS TO CART DIV === //
             let newItem = `
@@ -184,25 +180,28 @@ function updateCart() {
                 </div> 
             </div> 
         </div>`
-            const standardSelectedFile = document.getElementById('standardLinkImage').files[i]
-            const premiumSelectedFile = document.getElementById('premiumLinkImage').files[i]
-            if (standardSelectedFile) {
-                const reader = new FileReader()
-                reader.onload = readSuccess
-                function readSuccess() {
-                    console.log(this.result)
-                    $("#cartimg" + itemCount).attr("src", this.result)
-                }
-                reader.readAsDataURL(standardSelectedFile)
-            } else if (premiumSelectedFile) {
-                const reader = new FileReader()
-                reader.onload = readSuccess
-                function readSuccess() {
-                    console.log(this.result)
-                    $("#cartimg" + itemCount).attr("src", this.result)
-                }
-                reader.readAsDataURL(premiumSelectedFile)
-            }
+            // const standardSelectedFile = document.getElementById('standardLinkImage').files[i]
+            // const premiumSelectedFile = document.getElementById('premiumLinkImage').files[i]
+            // if (standardSelectedFile) {
+            //     const reader = new FileReader()
+            //     reader.onload = readSuccess
+            //     function readSuccess() {
+            //         console.log(this.result)
+            //         $("#cartimg" + itemCount).attr("src", this.result)
+            //     }
+            //     reader.readAsDataURL(standardSelectedFile)
+            // } else if (premiumSelectedFile) {
+            //     const reader = new FileReader()
+            //     reader.onload = readSuccess
+            //     function readSuccess() {
+            //         console.log(this.result)
+            //         $("#cartimg" + itemCount).attr("src", this.result)
+            //     }
+            //     reader.readAsDataURL(premiumSelectedFile)
+            // }
+            var currentCartImg = sessionStorage.getItem("savedImg" + itemCount)
+            console.log(currentCartImg)
+            $("#cartimg" + itemCount).attr('src', currentCartImg);
             $(".cartDiv").append(newItem)
             itemCount++
         }
