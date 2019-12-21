@@ -57,7 +57,7 @@ app.post('/pay', (req, res) => {
         "transactions": [{
             "item_list": {
                 "items": [{
-                    "name": "Red Sox Hat",
+                    "name": "GrafikRoboto Order",
                     "sku": "001",
                     "price": "5.00",
                     "currency": "USD",
@@ -68,7 +68,7 @@ app.post('/pay', (req, res) => {
                 "currency": "USD",
                 "total": "5.00"
             },
-            "description": "Hat for the best team ever"
+            "description": "GrafikRoboto"
         }]
     };
 
