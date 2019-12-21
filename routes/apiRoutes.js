@@ -7,6 +7,7 @@
 //             res.json(mainDialogue)
 //         });
 //     });
+
 //     app.get("/api/adventureOne", function (req, res) {
 //         db.adventureOne.findAll().then(function (adventureOne) {
 //             res.json(adventureOne)
