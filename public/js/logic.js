@@ -200,7 +200,6 @@ function updateCart() {
 }
 
 
-
 // === ADD AND UPDATE TOTAL === //
 function updateTotal() {
     let cartTotal = 0
@@ -211,7 +210,6 @@ function updateTotal() {
     }
     $(".total").html(`$${cartTotal.toFixed(2)}`)
 }
-
 
 
 // === REMOVE ITEM === //
