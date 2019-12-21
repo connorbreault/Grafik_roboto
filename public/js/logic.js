@@ -95,21 +95,42 @@ $("#submitHouseBtn").on("click", function () {
 })
 
 
-const inpFile = $("#premiumLinkImage")
-const previewContainer = $("#imagePreview")
-const previewImage = $(".image-preview__image")
-
-inpFile.on("change", function () {
-    const file = this.files[0]
+let standardInpFile = $("#standardLinkImage")
+let standardPreviewContainer = $("#standardImagePreview")
+let standardPreviewImage = $(".standardImage-preview__image")
+standardInpFile.on("change", function () {
+    console.log(this.files)
+    let file = this.files[this.files.length - 1]
     if (file) {
-        const reader = new FileReader()
+        let reader = new FileReader()
 
         reader.onload = readSuccess
         function readSuccess() {
             console.log(this.result)
-            $(".image-preview__default-text").addClass("hidden")
-            previewImage.attr("src", this.result)
-            previewImage.removeClass("hidden")
+            $(".standardImage-preview__default-text").addClass("hidden")
+            standardPreviewImage.attr("src", this.result)
+            standardPreviewImage.removeClass("hidden")
+        }
+
+        reader.readAsDataURL(file)
+    }
+})
+
+let premiumInpFile = $("#premiumLinkImage")
+let premiumPreviewContainer = $("#premiumImagePreview")
+let premiumPreviewImage = $(".premiumImage-preview__image")
+premiumInpFile.on("change", function () {
+    console.log(this.files)
+    let file = this.files[this.files.length - 1]
+    if (file) {
+        let reader = new FileReader()
+
+        reader.onload = readSuccess
+        function readSuccess() {
+            console.log(this.result)
+            $(".premiumImage-preview__default-text").addClass("hidden")
+            premiumPreviewImage.attr("src", this.result)
+            premiumPreviewImage.removeClass("hidden")
         }
 
         reader.readAsDataURL(file)
@@ -127,8 +148,8 @@ function updateCart() {
         $('.noItemsInCart').addClass("hidden")
 
 
+        let itemCount = 0
         for (let i = 0; i < cartItems.length; i++) {
-            itemCount = 0
             // === RENDER CART ITEMS TO CART DIV === //
             let newItem = `
         <div class="cartList">
@@ -160,7 +181,7 @@ function updateCart() {
                 </div> 
                 <div class="col s12"> 
                     <div class="cartItemInfoHead">Img: </div>
-                    <img src="" alt="" id="cartimg${itemCount}"> 
+                    <img src="" alt="" id="cartimg${itemCount}" class="cartimg"> 
                 </div> 
             </div> 
         </div>`
@@ -170,20 +191,30 @@ function updateCart() {
             // </div> 
 
             // </div>
-            const selectedFile = document.getElementById('premiumLinkImage').files[i]
-            if (selectedFile) {
+            const standardSelectedFile = document.getElementById('standardLinkImage').files[i]
+            const premiumSelectedFile = document.getElementById('premiumLinkImage').files[i]
+            if (standardSelectedFile) {
                 const reader = new FileReader()
                 reader.onload = readSuccess
                 function readSuccess() {
                     console.log(this.result)
                     $("#cartimg" + itemCount).attr("src", this.result)
                 }
-                reader.readAsDataURL(selectedFile)
+                reader.readAsDataURL(standardSelectedFile)
+            } else if (premiumSelectedFile) {
+                const reader = new FileReader()
+                reader.onload = readSuccess
+                function readSuccess() {
+                    console.log(this.result)
+                    $("#cartimg" + itemCount).attr("src", this.result)
+                }
+                reader.readAsDataURL(premiumSelectedFile)
             }
             $(".cartDiv").append(newItem)
             itemCount++
         }
         updateTotal()
+        itemCount = 0
 
     } else {
         $(".checkoutButtonDiv").addClass("hidden")
