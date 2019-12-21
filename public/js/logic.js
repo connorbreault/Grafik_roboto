@@ -185,12 +185,6 @@ function updateCart() {
                 </div> 
             </div> 
         </div>`
-            // <div class="row">
-            // <div class="col s12 l8 offset-l2">
-            // <p><div class="cartItemInfoHead">Img: </div>${cartItems[i].File}</p> 
-            // </div> 
-
-            // </div>
             const standardSelectedFile = document.getElementById('standardLinkImage').files[i]
             const premiumSelectedFile = document.getElementById('premiumLinkImage').files[i]
             if (standardSelectedFile) {
