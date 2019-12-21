@@ -17,7 +17,8 @@ var cartItems = []
 $("#submitStandardBtn").on("click", function () {
     let Product = $("#standardProductSelect").val()
     let Quantity = $("#standardQuantitySelect").val()
-    let File = $("#standardLinkImage").val()
+    let FileArr = $("#standardLinkImage")
+    let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#standardSizeSelect").val()
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
@@ -94,12 +95,12 @@ $("#submitHouseBtn").on("click", function () {
     }
 })
 
-var storageKey = 0
 let standardInpFile = $("#standardLinkImage")
 let standardPreviewContainer = $("#standardImagePreview")
 let standardPreviewImage = $(".standardImage-preview__image")
 standardInpFile.on("change", function () {
     let file = this.files[this.files.length - 1]
+    console.log(file)
     if (file) {
         let reader = new FileReader()
         reader.onload = readSuccess
@@ -107,8 +108,6 @@ standardInpFile.on("change", function () {
             $(".standardImage-preview__default-text").addClass("hidden")
             standardPreviewImage.attr("src", this.result)
             standardPreviewImage.removeClass("hidden")
-            sessionStorage.setItem("savedImg" + storageKey, this.result)
-            storageKey++
         }
         reader.readAsDataURL(file)
     }
@@ -126,8 +125,6 @@ premiumInpFile.on("change", function () {
             $(".premiumImage-preview__default-text").addClass("hidden")
             premiumPreviewImage.attr("src", this.result)
             premiumPreviewImage.removeClass("hidden")
-            sessionStorage.setItem("savedImg" + storageKey, this.result)
-            storageKey++
         }
         reader.readAsDataURL(file)
     }
@@ -180,28 +177,16 @@ function updateCart() {
                 </div> 
             </div> 
         </div>`
-            // const standardSelectedFile = document.getElementById('standardLinkImage').files[i]
-            // const premiumSelectedFile = document.getElementById('premiumLinkImage').files[i]
-            // if (standardSelectedFile) {
-            //     const reader = new FileReader()
-            //     reader.onload = readSuccess
-            //     function readSuccess() {
-            //         console.log(this.result)
-            //         $("#cartimg" + itemCount).attr("src", this.result)
-            //     }
-            //     reader.readAsDataURL(standardSelectedFile)
-            // } else if (premiumSelectedFile) {
-            //     const reader = new FileReader()
-            //     reader.onload = readSuccess
-            //     function readSuccess() {
-            //         console.log(this.result)
-            //         $("#cartimg" + itemCount).attr("src", this.result)
-            //     }
-            //     reader.readAsDataURL(premiumSelectedFile)
-            // }
-            var currentCartImg = sessionStorage.getItem("savedImg" + itemCount)
-            console.log(currentCartImg)
-            $("#cartimg" + itemCount).attr('src', currentCartImg);
+            let file = cartItems[i].File
+            console.log(file)
+            if (file) {
+                const reader = new FileReader()
+                reader.onload = readSuccess
+                function readSuccess() {
+                    $("#cartimg" + itemCount).attr('src', file);
+                }
+                reader.readAsDataURL(file)
+            }
             $(".cartDiv").append(newItem)
             itemCount++
         }
@@ -220,7 +205,9 @@ function updateCart() {
 function updateTotal() {
     let cartTotal = 0
     for (var l = 0; l < cartItems.length; l++) {
-        cartTotal = (parseInt(cartTotal) + parseInt(cartItems[l].itemTotal))
+        console.log(cartItems[l].itemTotal)
+        console.log(cartTotal)
+        cartTotal = (cartTotal + cartItems[l].itemTotal)
     }
     $(".total").html(`$${cartTotal.toFixed(2)}`)
 }
