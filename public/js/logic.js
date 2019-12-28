@@ -45,7 +45,8 @@ $("#submitStandardBtn").on("click", function () {
 $("#submitPremiumBtn").on("click", function () {
     let Product = $("#premiumProductSelect").val()
     let Quantity = $("#premiumQuantitySelect").val()
-    let File = $("#premiumLinkImage").val()
+    let FileArr = $("#premiumLinkImage").val()
+    let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#premiumSizeSelect").val()
     if (Product === "" || Quantity === "" || SizePrice === "") {
         $('#errorModal').modal("open")
@@ -177,17 +178,17 @@ function updateCart() {
                 </div> 
             </div> 
         </div>`
+            $(".cartDiv").append(newItem)
             let file = cartItems[i].File
             console.log(file)
             if (file) {
                 const reader = new FileReader()
                 reader.onload = readSuccess
                 function readSuccess() {
-                    $("#cartimg" + itemCount).attr('src', file);
+                    $("#cartimg" + itemCount).attr('src', this.result);
                 }
                 reader.readAsDataURL(file)
             }
-            $(".cartDiv").append(newItem)
             itemCount++
         }
         updateTotal()
@@ -198,6 +199,9 @@ function updateCart() {
         $('.noItemsInCart').removeClass("hidden")
     }
 }
+
+
+
 
 
 // === ADD AND UPDATE TOTAL === //
