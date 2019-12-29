@@ -45,7 +45,7 @@ $("#submitStandardBtn").on("click", function () {
 $("#submitPremiumBtn").on("click", function () {
     let Product = $("#premiumProductSelect").val()
     let Quantity = $("#premiumQuantitySelect").val()
-    let FileArr = $("#premiumLinkImage").val()
+    let FileArr = $("#premiumLinkImage")
     let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#premiumSizeSelect").val()
     if (Product === "" || Quantity === "" || SizePrice === "") {
@@ -106,7 +106,6 @@ standardInpFile.on("change", function () {
         let reader = new FileReader()
         reader.onload = readSuccess
         function readSuccess() {
-            $(".standardImage-preview__default-text").addClass("hidden")
             standardPreviewImage.attr("src", this.result)
             standardPreviewImage.removeClass("hidden")
         }
@@ -123,7 +122,6 @@ premiumInpFile.on("change", function () {
         let reader = new FileReader()
         reader.onload = readSuccess
         function readSuccess() {
-            $(".premiumImage-preview__default-text").addClass("hidden")
             premiumPreviewImage.attr("src", this.result)
             premiumPreviewImage.removeClass("hidden")
         }
@@ -179,20 +177,11 @@ function updateCart() {
             </div> 
         </div>`
             $(".cartDiv").append(newItem)
-            let file = cartItems[i].File
-            console.log(file)
-            if (file) {
-                const reader = new FileReader()
-                reader.onload = readSuccess
-                function readSuccess() {
-                    $("#cartimg" + itemCount).attr('src', this.result);
-                }
-                reader.readAsDataURL(file)
-            }
             itemCount++
         }
         updateTotal()
         itemCount = 0
+        cartImgPreview()
 
     } else {
         $(".checkoutButtonDiv").addClass("hidden")
@@ -200,16 +189,27 @@ function updateCart() {
     }
 }
 
-
-
+function cartImgPreview() {
+    for (let i = 0; i < cartItems.length; i++) {
+        let file = cartItems[i].File
+        console.log(`cartItem img: ${i}`)
+        console.log(file)
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = readSuccess
+            function readSuccess() {
+                $("#cartimg" + i).attr('src', this.result);
+            }
+            reader.readAsDataURL(file)
+        }
+    }
+}
 
 
 // === ADD AND UPDATE TOTAL === //
 function updateTotal() {
     let cartTotal = 0
     for (var l = 0; l < cartItems.length; l++) {
-        console.log(cartItems[l].itemTotal)
-        console.log(cartTotal)
         cartTotal = (cartTotal + cartItems[l].itemTotal)
     }
     $(".total").html(`$${cartTotal.toFixed(2)}`)
