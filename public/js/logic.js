@@ -53,6 +53,8 @@ $("#submitPremiumBtn").on("click", function () {
     let SizePrice = $("#premiumSizeSelect").val()
     if (Product === "" || Quantity === "" || SizePrice === "") {
         $('#errorModal').modal("open")
+    } else if (Size === "Custom") {
+        $('#customModal').modal("open")
     } else {
         let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
