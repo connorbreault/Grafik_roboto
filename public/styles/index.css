@@ -232,14 +232,17 @@ width: 100%;
 }
 
 /* ============ MODAL =============== */
-#addedModal, #errorModal{
+#addedModal, #errorModal, #customModal{
     background: #2b292a;
     border: #e5973b 2px solid;
     border-radius: 25px;
     font-family: 'Merienda', cursive;
-    color: white;
+    color: white !important;
     text-align: center
 }
+/* #customModalTextArea{
+    color: white
+} */
 
 
 /* ========== CONTACT BOX =========== */
