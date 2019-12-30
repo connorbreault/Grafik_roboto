@@ -240,6 +240,10 @@ width: 100%;
     color: white !important;
     text-align: center
 }
+#customModalTextArea{
+    color: white;
+    text-align: center
+}
 
 
 /* ========== CONTACT BOX =========== */
