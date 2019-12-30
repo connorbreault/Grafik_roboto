@@ -211,13 +211,14 @@ function cartImgPreview() {
 
 
 $("#customMessageSend").on("click", function () {
-    let Name = $("#icon_prefix").val().trim()
-    let Phone = $("#icon_telephone").val().trim()
-    let Email = $("#icon_email").val().trim()
+    let Name = $("#customPrefix").val().trim()
+    let Phone = $("#customTelephone").val().trim()
+    let Email = $("#customEmail").val().trim()
     let customMessage = $("#customModalTextArea").val()
-    if (customMessage === "") {
+    if (Name === "" || Phone === "" || Email === "" || customMessage === "") {
         alert("Please fill out all inputs")
     } else {
+        alert(Name + Phone + Email + customMessage)
         $("#customModalInputDiv").addClass("hidden")
         $("#customModalSuccessDiv").removeClass("hidden")
     }
