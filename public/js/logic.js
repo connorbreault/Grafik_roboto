@@ -22,12 +22,12 @@ $("#submitStandardBtn").on("click", function () {
     let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#standardSizeSelect").val()
     let [Size, Price] = SizePrice.split("-")
-    let itemTotal = (Price * Quantity)
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
     } else if (Size === "Custom") {
         $('#customModal').modal("open")
     } else {
+        let itemTotal = (Price * Quantity)
         let newItem = {
             Product,
             Size,
@@ -51,12 +51,13 @@ $("#submitPremiumBtn").on("click", function () {
     let FileArr = $("#premiumLinkImage")
     let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#premiumSizeSelect").val()
-    if (Product === "" || Quantity === "" || SizePrice === "") {
+    let [Size, Price] = SizePrice.split("-")
+    if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
     } else if (Size === "Custom") {
-        $('#customModal').modal("open")
+        // $('#customModal').modal("open")
+        alert("gang")
     } else {
-        let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
         let newItem = {
             Product,
@@ -224,6 +225,10 @@ $("#customMessageSend").on("click", function () {
         $("#customModalInputDiv").addClass("hidden")
         $("#customModalSuccessDiv").removeClass("hidden")
     }
+})
+$("#customModalClose").on("click", function () {
+    $("#customModalInputDiv").removeClass("hidden")
+    $("#customModalSuccessDiv").addClass("hidden")
 })
 
 
