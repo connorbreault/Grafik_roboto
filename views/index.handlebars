@@ -19,6 +19,52 @@
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text">Okay</a>
         </div>
     </div>
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <div id="customModalInputDiv">
+                <h4>Please give us all details about your custom concept in the box below</h4>
+                <h5>We will get back to you asap</h5>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Full Name</label>
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Phone Number</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="icon_email" type="email" class="validate">
+                                <label for="icon_email">Email</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="customModalTextArea" class="materialize-textarea"></textarea>
+                                <label for="customModalTextArea">Place inquiry here</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <a href="#!" class="waves-effect waves-green btn-flat orange-text" id="customMessageSend">Send
+                    Inquiry</a>
+            </div>
+            <div id="customModalSuccessDiv" class="hidden">
+                <h4>Your message has been sent!</h4>
+                <h5>Please allow 1 business day for a quote</h5>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text">Okay</a>
+            </div>
+        </div>
+    </div>
 
     <div id="mainContainer">
         <h1 id="shopText">Shop</h1>
@@ -78,7 +124,7 @@
                                                 <option value="2x7-1.00">2in x 7in</option>
                                                 <option value="3x8-1.50">3in x 8in</option>
                                                 <option value="4x9-2.00">4in x 9in</option>
-                                                <option value="other">Custom (Price inquiry w/ owner)</option>
+                                                <option value="Custom">Custom (Price inquiry w/ owner)</option>
                                             </select>
                                             <label class="inputLabel">Select Size</label>
                                         </div>
@@ -209,7 +255,7 @@
                                                 <option value="2x7-1.50">2in x 7in</option>
                                                 <option value="3x8-2.00">3in x 8in</option>
                                                 <option value="4x9-2.50">4in x 9in</option>
-                                                <option value="other">Custom (Price inquiry w/ owner)</option>
+                                                <option value="Custom">Custom (Price inquiry w/ owner)</option>
                                             </select>
                                             <label class="inputLabel">Select Size</label>
                                         </div>
@@ -315,7 +361,7 @@
                                                 <option value="2x7-5.00">2in x 7in</option>
                                                 <option value="3x8-5.00">3in x 8in</option>
                                                 <option value="4x9-5.00">4in x 9in</option>
-                                                <option value="other">Custom (Price inquiry w/ owner)</option>
+                                                <option value="Custom">Custom (Price inquiry w/ owner)</option>
                                             </select>
                                             <label class="inputLabel">Select Size</label>
                                         </div>

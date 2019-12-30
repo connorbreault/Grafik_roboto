@@ -5,6 +5,7 @@ $(document).ready(function () {
     var instance = M.Collapsible.init(elem, {
         accordion: false
     });
+    emailjs.init("user_deAIEYtIkIShexUgNNM3h");
 });
 // === ONLOAD === //
 function js_Load() {
@@ -20,11 +21,13 @@ $("#submitStandardBtn").on("click", function () {
     let FileArr = $("#standardLinkImage")
     let File = FileArr.toArray()[0].files[0]
     let SizePrice = $("#standardSizeSelect").val()
+    let [Size, Price] = SizePrice.split("-")
+    let itemTotal = (Price * Quantity)
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
+    } else if (Size === "Custom") {
+        $('#customModal').modal("open")
     } else {
-        let [Size, Price] = SizePrice.split("-")
-        let itemTotal = (Price * Quantity)
         let newItem = {
             Product,
             Size,
@@ -204,6 +207,21 @@ function cartImgPreview() {
         }
     }
 }
+
+
+
+$("#customMessageSend").on("click", function () {
+    let Name = $("#icon_prefix").val().trim()
+    let Phone = $("#icon_telephone").val().trim()
+    let Email = $("#icon_email").val().trim()
+    let customMessage = $("#customModalTextArea").val()
+    if (customMessage === "") {
+        alert("Please fill out all inputs")
+    } else {
+        $("#customModalInputDiv").addClass("hidden")
+        $("#customModalSuccessDiv").removeClass("hidden")
+    }
+})
 
 
 // === ADD AND UPDATE TOTAL === //
