@@ -25,7 +25,7 @@ $("#submitStandardBtn").on("click", function () {
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
     } else if (Size === "Custom") {
-        $('#customModal').modal("open")
+        openCustomModal()
     } else {
         let itemTotal = (Price * Quantity)
         let newItem = {
@@ -55,8 +55,7 @@ $("#submitPremiumBtn").on("click", function () {
     if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
         $('#errorModal').modal("open")
     } else if (Size === "Custom") {
-        // $('#customModal').modal("open")
-        alert("gang")
+        openCustomModal()
     } else {
         let itemTotal = (Price * Quantity)
         let newItem = {
@@ -80,10 +79,12 @@ $("#submitHouseBtn").on("click", function () {
     let Product = $("#houseProductSelect").val()
     let Quantity = $("#houseQuantitySelect").val()
     let SizePrice = $("#houseSizeSelect").val()
+    let [Size, Price] = SizePrice.split("-")
     if (Product === "" || Quantity === "" || SizePrice === "") {
         $('#errorModal').modal("open")
+    } else if (Size === "Custom") {
+        openCustomModal()
     } else {
-        let [Size, Price] = SizePrice.split("-")
         let itemTotal = (Price * Quantity)
         let newItem = {
             Product,
@@ -211,7 +212,9 @@ function cartImgPreview() {
     }
 }
 
-
+function openCustomModal() {
+    $('#customModal').modal("open")
+}
 
 $("#customMessageSend").on("click", function () {
     let Name = $("#customPrefix").val().trim()
