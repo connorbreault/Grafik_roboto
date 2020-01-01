@@ -220,13 +220,32 @@ $("#customMessageSend").on("click", function () {
     let Name = $("#customPrefix").val().trim()
     let Phone = $("#customTelephone").val().trim()
     let Email = $("#customEmail").val().trim()
-    let customMessage = $("#customModalTextArea").val()
-    if (Name === "" || Phone === "" || Email === "" || customMessage === "") {
+    let Type = $("#customType").val().trim()
+    let Quantity = $("#customQuantity").val().trim()
+    let Message = $("#customModalTextArea").val()
+    if (Name === "" || Phone === "" || Email === "" || Message === "" || Type === "") {
         alert("Please fill out all inputs")
     } else {
-        alert(Name + Phone + Email + customMessage)
-        $("#customModalInputDiv").addClass("hidden")
-        $("#customModalSuccessDiv").removeClass("hidden")
+        alert(Name + Phone + Email + Message + Type)
+        let templateParams = {
+            type: "INQUIRY",
+            name: Name,
+            number: Phone,
+            email: Email,
+            order_type: Type,
+            order_quantity: Quantity,
+            message: Message,
+        }
+        emailjs.send('default_service', 'grafikmessage', templateParams)
+            .then(function (response) {
+                console.log('Sucessful message send!')
+                $("#customModalInputDiv").addClass("hidden")
+                $("#customModalSuccessDiv").removeClass("hidden")
+            }, function (error) {
+                console.log('FAILED...', error)
+                $("#customModalInputDiv").addClass("hidden")
+                $("#customModalErrorDiv").removeClass("hidden")
+            });
     }
 })
 $("#customModalClose").on("click", function () {

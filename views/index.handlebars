@@ -37,6 +37,18 @@
                                 <input id="customTelephone" type="tel" class="validate">
                                 <label for="customTelephone">Phone Number</label>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="customType" type="text" class="validate">
+                                <label for="customType" style="center-align">Product type</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="customQuantity" type="tel" class="validate">
+                                <label for="customQuantity" style="center-align">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">email</i>
                                 <input id="customEmail" type="email" class="validate">
@@ -63,6 +75,13 @@
                 <h5 class="orange-text">Please allow 1 business day for a quote</h5>
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text"
                     id="customModalClose">Okay</a>
+            </div>
+            <div id="customModalErrorDiv" class="hidden">
+                <h4>Your message was not sent!</h4>
+                <h5 class="orange-text">Please report your error or try again</h5>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text"
+                    id="customModalClose">Return</a>
+                <a href="/reportIssue" class="waves-effect waves-red btn-flat red-text">Report</a>
             </div>
         </div>
     </div>
