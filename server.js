@@ -10,9 +10,6 @@ paypal.configure({
     'client_secret': 'EG8crd1wd1mm9JaZ2P6yROMge_AkBNiT7XlN1q4bnw6Bocpr5TB0_WFNjPdmT7TZAWhXVKmGLLpnMqNL'
 });
 
-// var db = require("./models");
-// response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
-
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -115,8 +112,7 @@ app.get('/success', (req, res) => {
 app.get('/cancel', (req, res) => res.render('cancelled'));
 
 
-// Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync(syncOptions).then(function () {
+// Starting the server ------------------------------------/
 app.listen(PORT, function () {
     console.log(
         "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
@@ -124,6 +120,5 @@ app.listen(PORT, function () {
         PORT
     );
 });
-// });
 
 module.exports = app;
