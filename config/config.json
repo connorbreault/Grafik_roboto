@@ -2,7 +2,7 @@
     "development": {
         "username": "root",
         "password": "",
-        "database": "questions_db",
+        "database": "",
         "host": "127.0.0.1",
         "port": 3306,
         "dialect": "mysql"
