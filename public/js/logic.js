@@ -7,12 +7,18 @@ $(document).ready(function () {
     });
     emailjs.init("user_deAIEYtIkIShexUgNNM3h");
 });
+
+
 // === ONLOAD === //
 function js_Load() {
     document.body.style.visibility = 'visible'
 }
 
+
+// === INITIALIZE CART === //
 var cartItems = []
+
+
 // === PUSH ITEM TO CART FUNCTION === //
 function addItem(newItem) {
     cartItems.push(newItem)
@@ -23,6 +29,7 @@ function addItem(newItem) {
     $('#addedModal').modal("open")
 }
 
+
 // === MAKE NEW ITEM FUNCTION === //
 $(".addToCart").on("click", function () {
     let type = $(this).attr("data-type")
@@ -30,6 +37,7 @@ $(".addToCart").on("click", function () {
     let Quantity = $(`#${type}QuantitySelect`).val()
     let SizePrice = $(`#${type}SizeSelect`).val()
     let [Size, Price] = SizePrice.split("-")
+    // === IF HOUSE PRODUCT === //
     if (type != "house") {
         let FileArr = $(`#${type}LinkImage`)
         let File = FileArr.toArray()[0].files[0]
@@ -49,7 +57,11 @@ $(".addToCart").on("click", function () {
             }
             addItem(newItem)
         }
-    } else {
+    }
+
+
+    // IF NON HOUSE PRODUCT ===//
+    else {
         if (Product === "" || Quantity === "" || SizePrice === "") {
             $('#errorModal').modal("open")
         } else if (Size === "Custom") {
@@ -68,6 +80,8 @@ $(".addToCart").on("click", function () {
     }
 })
 
+
+// === PREVIEW IMAGE ON UPLOAD === //
 $(".linkImage").on("change", function () {
     let type = $(this).attr("data-type")
     let previewImage = $(`.${type}Image-preview__image`)
@@ -94,8 +108,8 @@ function updateCart() {
         $('.noItemsInCart').addClass("hidden")
         let itemCount = 0
 
+        // === RENDER CART ITEMS TO CART DIV === //
         for (let i = 0; i < cartItems.length; i++) {
-            // === RENDER CART ITEMS TO CART DIV === //
             let newItem = `
         <div class="cartList">
         <div class="row"> 
@@ -143,6 +157,8 @@ function updateCart() {
     }
 }
 
+
+// === IMAGE PREVIEW IN CART === //
 function cartImgPreview() {
     for (let i = 0; i < cartItems.length; i++) {
         let file = cartItems[i].File
@@ -157,10 +173,14 @@ function cartImgPreview() {
     }
 }
 
+
+// === OPEN CUSTOM MODAL === //
 function openCustomModal() {
     $('#customModal').modal("open")
 }
 
+
+// === SEND CUSTOM INQUIRY === //
 $("#customMessageSend").on("click", function () {
     let Name = $("#customPrefix").val().trim()
     let Phone = $("#customTelephone").val().trim()
@@ -193,6 +213,8 @@ $("#customMessageSend").on("click", function () {
             });
     }
 })
+
+// === CLOSE CUSTOM PRODUCT INQUIRY MODAL === //
 $("#customModalClose").on("click", function () {
     $("#customModalInputDiv").removeClass("hidden")
     $("#customModalSuccessDiv").addClass("hidden")
@@ -241,6 +263,7 @@ $("#submitOrderBtn").on("click", function () {
     }
 })
 
+// === SHIPPING AND TAX GUESTIMATION === //
 function addShippingAndTax() {
     let cartTotal = 0
     for (var l = 0; l < cartItems.length; l++) {
