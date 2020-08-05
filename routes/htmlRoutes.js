@@ -5,16 +5,9 @@ module.exports = function (app) {
     app.get("/", function (req, res) {
         res.render("index");
     });
-    // Load contact page
-    app.get("/contact", function (req, res) {
-        res.render("contact");
+    // Load pages
+    app.get("/:page", function (req, res) {
+        let page = req.params.page
+        res.render(`${page}`);
     });
-    // Load report issue page
-    app.get("/reportIssue", function (req, res) {
-        res.render("reportIssue");
-    });
-    // Render 404 page for any unmatched routes
-    // app.get("*", function (req, res) {
-    //     res.render("404");
-    // });
 };
