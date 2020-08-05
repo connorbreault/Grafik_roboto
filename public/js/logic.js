@@ -13,93 +13,55 @@ function js_Load() {
 }
 
 var cartItems = []
-
-// === SUBMIT ORDERS === //
-$("#submitStandardBtn").on("click", function () {
-    let Product = $("#standardProductSelect").val()
-    let Quantity = $("#standardQuantitySelect").val()
-    let FileArr = $("#standardLinkImage")
-    let File = FileArr.toArray()[0].files[0]
-    let SizePrice = $("#standardSizeSelect").val()
+function addItem(newItem) {
+    cartItems.push(newItem)
+    updateCart()
+    // SHOW MODAL //
+    $('#modalItem').empty()
+    $("#modalItem").html(newItem.Product)
+    $('#addedModal').modal("open")
+}
+$(".addToCart").on("click", function () {
+    let type = $(this).attr("data-type")
+    let Product = $(`#${type}ProductSelect`).val()
+    let Quantity = $(`#${type}QuantitySelect`).val()
+    let SizePrice = $(`#${type}SizeSelect`).val()
     let [Size, Price] = SizePrice.split("-")
-    if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
-        $('#errorModal').modal("open")
-    } else if (Size === "Custom") {
-        openCustomModal()
-    } else {
-        let itemTotal = (Price * Quantity)
-        let newItem = {
-            Product,
-            Size,
-            Quantity,
-            File,
-            Price,
-            itemTotal
+    if (type != "house") {
+        let FileArr = $(`#${type}LinkImage`)
+        let File = FileArr.toArray()[0].files[0]
+        if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
+            $('#errorModal').modal("open")
+        } else if (Size === "Custom") {
+            openCustomModal()
+        } else {
+            let itemTotal = (Price * Quantity)
+            let newItem = {
+                Product,
+                Size,
+                Quantity,
+                File,
+                Price,
+                itemTotal
+            }
+            addItem(newItem)
         }
-        // UPDATE CART //
-        cartItems.push(newItem)
-        updateCart()
-        // SHOW MODAL //
-        $('#modalItem').empty()
-        $("#modalItem").html(Product)
-        $('#addedModal').modal("open")
-    }
-})
-$("#submitPremiumBtn").on("click", function () {
-    let Product = $("#premiumProductSelect").val()
-    let Quantity = $("#premiumQuantitySelect").val()
-    let FileArr = $("#premiumLinkImage")
-    let File = FileArr.toArray()[0].files[0]
-    let SizePrice = $("#premiumSizeSelect").val()
-    let [Size, Price] = SizePrice.split("-")
-    if (Product === "" || Quantity === "" || File === "" || SizePrice === "") {
-        $('#errorModal').modal("open")
-    } else if (Size === "Custom") {
-        openCustomModal()
     } else {
-        let itemTotal = (Price * Quantity)
-        let newItem = {
-            Product,
-            Size,
-            Quantity,
-            File,
-            Price,
-            itemTotal
+        if (Product === "" || Quantity === "" || SizePrice === "") {
+            $('#errorModal').modal("open")
+        } else if (Size === "Custom") {
+            openCustomModal()
+        } else {
+            let itemTotal = (Price * Quantity)
+            let newItem = {
+                Product,
+                Quantity,
+                Size,
+                Price,
+                itemTotal
+            }
+            addItem(newItem)
         }
-        // UPDATE CART //
-        cartItems.push(newItem)
-        updateCart()
-        // SHOW MODAL //
-        $('#modalItem').empty()
-        $("#modalItem").html(Product)
-        $('#addedModal').modal("open")
-    }
-})
-$("#submitHouseBtn").on("click", function () {
-    let Product = $("#houseProductSelect").val()
-    let Quantity = $("#houseQuantitySelect").val()
-    let SizePrice = $("#houseSizeSelect").val()
-    let [Size, Price] = SizePrice.split("-")
-    if (Product === "" || Quantity === "" || SizePrice === "") {
-        $('#errorModal').modal("open")
-    } else if (Size === "Custom") {
-        openCustomModal()
-    } else {
-        let itemTotal = (Price * Quantity)
-        let newItem = {
-            Product,
-            Quantity,
-            Size,
-            Price,
-            itemTotal
-        }
-        // UPDATE CART //
-        cartItems.push(newItem)
-        updateCart()
-        // SHOW MODAL //
-        $('#modalItem').empty()
-        $("#modalItem").html(Product)
-        $('#addedModal').modal("open")
     }
 })
 
@@ -108,7 +70,6 @@ let standardPreviewContainer = $("#standardImagePreview")
 let standardPreviewImage = $(".standardImage-preview__image")
 standardInpFile.on("change", function () {
     let file = this.files[this.files.length - 1]
-    console.log(file)
     if (file) {
         let reader = new FileReader()
         reader.onload = readSuccess
@@ -199,8 +160,6 @@ function updateCart() {
 function cartImgPreview() {
     for (let i = 0; i < cartItems.length; i++) {
         let file = cartItems[i].File
-        console.log(`cartItem img: ${i}`)
-        console.log(file)
         if (file) {
             const reader = new FileReader()
             reader.onload = readSuccess
