@@ -13,6 +13,7 @@ function js_Load() {
 }
 
 var cartItems = []
+// === PUSH ITEM TO CART FUNCTION === //
 function addItem(newItem) {
     cartItems.push(newItem)
     updateCart()
@@ -21,6 +22,8 @@ function addItem(newItem) {
     $("#modalItem").html(newItem.Product)
     $('#addedModal').modal("open")
 }
+
+// === MAKE NEW ITEM FUNCTION === //
 $(".addToCart").on("click", function () {
     let type = $(this).attr("data-type")
     let Product = $(`#${type}ProductSelect`).val()
@@ -65,33 +68,16 @@ $(".addToCart").on("click", function () {
     }
 })
 
-let standardInpFile = $("#standardLinkImage")
-let standardPreviewContainer = $("#standardImagePreview")
-let standardPreviewImage = $(".standardImage-preview__image")
-standardInpFile.on("change", function () {
+$(".linkImage").on("change", function () {
+    let type = $(this).attr("data-type")
+    let previewImage = $(`.${type}Image-preview__image`)
     let file = this.files[this.files.length - 1]
     if (file) {
         let reader = new FileReader()
         reader.onload = readSuccess
         function readSuccess() {
-            standardPreviewImage.attr("src", this.result)
-            standardPreviewImage.removeClass("hidden")
-        }
-        reader.readAsDataURL(file)
-    }
-})
-
-let premiumInpFile = $("#premiumLinkImage")
-let premiumPreviewContainer = $("#premiumImagePreview")
-let premiumPreviewImage = $(".premiumImage-preview__image")
-premiumInpFile.on("change", function () {
-    let file = this.files[this.files.length - 1]
-    if (file) {
-        let reader = new FileReader()
-        reader.onload = readSuccess
-        function readSuccess() {
-            premiumPreviewImage.attr("src", this.result)
-            premiumPreviewImage.removeClass("hidden")
+            previewImage.attr("src", this.result)
+            previewImage.removeClass("hidden")
         }
         reader.readAsDataURL(file)
     }
