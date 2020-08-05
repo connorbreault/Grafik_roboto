@@ -425,9 +425,6 @@
                             </div>
                             <div class="noItemsInCart">
                                 <h4>No items currently in cart...</h4>
-                                <form action="/pay" method="POST">
-                                    <input type="submit" value="Buy">
-                                </form>
                             </div>
                             <div class="checkoutButtonDiv hidden row">
                                 <div class="totalDiv">
@@ -543,15 +540,12 @@
                                     </div>
                                     <div class="col s12 l6">
                                         <form action="/pay" method="POST">
-                                            <input type="submit" value="Buy"><a
-                                                class="waves-effect waves-light btn green lighten-2" id="confirmBtn"
-                                                type="submit" value="Buy">
-                                                <i class="material-icons left">done</i>Confirm
+                                            <a class="waves-effect waves-light btn blue lighten-2" id="confirmBtn">
+                                                <input type="submit" value='Pay with Paypal'>
+                                                <i class="material-icons left">done</i>
+                                                </input>
                                             </a>
-                                            </input>
                                         </form>
-                                        <h2>OR</h2>
-
                                     </div>
                                 </div>
                             </div>
