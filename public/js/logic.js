@@ -58,8 +58,6 @@ $(".addToCart").on("click", function () {
             addItem(newItem)
         }
     }
-
-
     // IF NON HOUSE PRODUCT ===//
     else {
         if (Product === "" || Quantity === "" || SizePrice === "") {
@@ -150,8 +148,8 @@ function updateCart() {
         updateTotal()
         itemCount = 0
         cartImgPreview()
-
     } else {
+        // === SHOW NO ITEMS === //
         $(".checkoutButtonDiv").addClass("hidden")
         $('.noItemsInCart').removeClass("hidden")
     }
