@@ -296,3 +296,8 @@ $("#cancelBtn").on("click", function () {
     $(".cartDiv , .checkoutButtonDiv").removeClass("hidden")
     $(".orderUserInfo, .plusTaxAndShipping").addClass("hidden")
 })
+
+
+$("#payWithPaypal").on("click", function () {
+    alert("hi")
+})
