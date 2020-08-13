@@ -301,5 +301,10 @@ $("#cancelBtn").on("click", function () {
 $("#payWithPaypal").on("click", function () {
     let cart = JSON.stringify(cartItems)
     console.log(cart)
-    $.post("/paypal", cart);
+    $.ajax({
+        type: 'POST',
+        url: '/paypal',
+        contentType: 'application/json',
+        data: cart
+    });
 })

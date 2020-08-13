@@ -8,6 +8,13 @@ module.exports = function (app) {
     });
     app.post('/paypal', (req, res) => {
         console.log(req.body)
+        let data = req.body
+        let price = 0
+        for (let i = 0; i < data.length; i++) {
+            price += parseFloat(data[i].Price)
+            console.log(price)
+        }
+        res.send(req.body)
         // const create_payment_json = {
         //     "intent": "sale",
         //     "payer": {
